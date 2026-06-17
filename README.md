@@ -1,6 +1,6 @@
 Engineering Concepts - Design Patterns
 
-### Implemented Patterns
+Implemented Patterns
 
 1. Singleton Pattern
    - Logger implementation
@@ -10,7 +10,7 @@ Engineering Concepts - Design Patterns
    - Creates different document types
    - Demonstrates object creation through factories
 
-## Project Structure
+## Exercise Structure
 
 src/
 └── com/
