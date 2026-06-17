@@ -1,4 +1,4 @@
-package com.engineeringconcepts.designpatterns.factory;
+package com.engineeringconcepts.designpatterns.factorymethodpattern;
 
 public class ExcelDocument implements Document {
 

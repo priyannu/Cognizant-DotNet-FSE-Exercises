@@ -1,4 +1,4 @@
-package com.engineeringconcepts.designpatterns.singleton;
+package com.engineeringconcepts.designpatterns.singletonpattern;
 
 public class Logger {
 
