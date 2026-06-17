@@ -1,4 +1,4 @@
-package com.engineeringconcepts.designpatterns.factorymethodpattern;
+package com.engineering_concepts.designpatterns.factory_method_pattern;
 
 public class WordDocument implements Document {
 
