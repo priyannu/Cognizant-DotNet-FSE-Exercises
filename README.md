@@ -1,6 +1,6 @@
 ### 1.Engineering Concepts inside src/com
 
-Design Patterns
+#### Design Patterns
 
 Implemented Patterns
 
@@ -37,8 +37,8 @@ src/
 └── com/
 └── cognizant/
 ├── designpatterns/
-│   ├── singleton/
-│   └── factory/
+│   ├── singleton_pattern/
+│   └── factory_method_pattern/
 │
 └── dsa/
 ├── ecommercesearch/
