@@ -14,6 +14,15 @@ public class Main {
                 years
         );
 
-        System.out.println("Predicted Future Value: ₹" + futureValue);
+        System.out.printf("Predicted Future Value: ₹%.2f%n", futureValue);
+
+        System.out.println("\nANALYSIS");
+
+        System.out.println("Time Complexity: O(n)");
+        System.out.println("Space Complexity: O(n)");
+
+        System.out.println("\nOptimization:");
+        System.out.println("An iterative approach or direct mathematical formula");
+        System.out.println("can be used to avoid recursive call overhead.");
     }
 }

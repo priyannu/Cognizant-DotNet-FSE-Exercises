@@ -37,5 +37,21 @@ public class Main {
         if (result2 != null) {
             System.out.println(result2);
         }
+
+        System.out.println("\nANALYSIS");
+
+        System.out.println("\nLinear Search:");
+        System.out.println("Best Case: O(1)");
+        System.out.println("Average Case: O(n)");
+        System.out.println("Worst Case: O(n)");
+
+        System.out.println("\nBinary Search:");
+        System.out.println("Best Case: O(1)");
+        System.out.println("Average Case: O(log n)");
+        System.out.println("Worst Case: O(log n)");
+
+        System.out.println("\nConclusion:");
+        System.out.println("Binary Search is faster and more suitable");
+        System.out.println("for large e-commerce platforms when data is sorted.");
     }
 }

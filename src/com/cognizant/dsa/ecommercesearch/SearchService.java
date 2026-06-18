@@ -2,7 +2,18 @@ package com.cognizant.dsa.ecommercesearch;
 
 public class SearchService {
 
-    // Linear Search
+    /*
+     * Linear Search
+     *
+     * Best Case Time Complexity: O(1)
+     * Average Case Time Complexity: O(n)
+     * Worst Case Time Complexity: O(n)
+     *
+     * Space Complexity: O(1)
+     *
+     * Linear search checks each element one by one
+     * until the target product is found.
+     */
     public static Product linearSearch(Product[] products, String targetName) {
 
         for (Product product : products) {
@@ -15,7 +26,18 @@ public class SearchService {
         return null;
     }
 
-    // Binary Search
+    /*
+     * Binary Search
+     *
+     * Best Case Time Complexity: O(1)
+     * Average Case Time Complexity: O(log n)
+     * Worst Case Time Complexity: O(log n)
+     *
+     * Space Complexity: O(1)
+     *
+     * Binary search works only on sorted data.
+     * It repeatedly divides the search space into half.
+     */
     public static Product binarySearch(Product[] products, String targetName) {
 
         int left = 0;
