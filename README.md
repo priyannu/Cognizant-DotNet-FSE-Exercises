@@ -1,7 +1,6 @@
-### 1.Engineering Concepts
+### 1.Engineering Concepts inside src/com
 
 Design Patterns
- Implemented Patterns
 
 Implemented Patterns
 
