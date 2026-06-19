@@ -1,45 +1,103 @@
-### 1.Engineering Concepts inside src/com
+# Cognizant DN 5.0 – Engineering Concepts
 
-#### Design Patterns
+This repository contains the mandatory exercises completed as part of the Cognizant Digital Nurture 5.0 DotNet FSE program.
 
-Implemented Patterns
+## Design Principles & Patterns (Java)
 
-1. Singleton Pattern
+### Exercise 1 – Singleton Pattern
 
-    * Logger implementation
-    * Ensures a single instance throughout the application
+Implemented a Logger class using the Singleton Design Pattern.
 
-2. Factory Method Pattern
+**Features**
 
-    * Creates different document types
-    * Demonstrates object creation through factories
+* Ensures only one instance of Logger exists.
+* Provides a global access point to the Logger object.
 
-### Data Structures & Algorithms
+### Exercise 2 – Factory Method Pattern
 
-#### Implemented Exercises
+Implemented the Factory Method Design Pattern to create different document types.
 
-1. E-commerce Platform Search Function
+**Document Types**
 
-    * Linear Search implementation
-    * Binary Search implementation
-    * Time Complexity Analysis
-    * Product search optimization
+* Word Document
+* PDF Document
+* Excel Document
 
-2. Financial Forecasting
+---
 
-    * Recursive algorithm implementation
-    * Future value prediction based on growth rate
-    * Complexity Analysis
+## Data Structures and Algorithms (Java)
 
-## Exercise Structure
+### Exercise 2 – E-Commerce Platform Search Function
 
-src/
-└── com/
-└── cognizant/
-├── designpatterns/
-│   ├── singleton_pattern/
-│   └── factory_method_pattern/
+Implemented search operations on a product catalog.
+
+**Algorithms Used**
+
+* Linear Search
+* Binary Search
+
+**Complexity Analysis**
+
+Linear Search
+
+* Best Case: O(1)
+* Average Case: O(n)
+* Worst Case: O(n)
+
+Binary Search
+
+* Best Case: O(1)
+* Average Case: O(log n)
+* Worst Case: O(log n)
+
+---
+
+### Exercise 7 – Financial Forecasting
+
+Implemented a recursive algorithm to predict future financial values.
+
+**Complexity Analysis**
+
+* Time Complexity: O(n)
+* Space Complexity: O(n)
+
+Optimization:
+
+* Iterative approach
+* Direct mathematical formula
+
+---
+
+## Data Structures and Algorithms (C#)
+
+### Exercise 2 – E-Commerce Search
+
+Implemented:
+
+* Product class
+* Linear Search
+* Binary Search
+* Complexity analysis
+
+### Exercise 7 – Financial Forecasting
+
+Implemented:
+
+* Recursive forecasting method
+* Complexity analysis
+* Optimization suggestions
+
+---
+
+## Repository Structure
+
+```text
+Engineering Concepts
+├── Design principles & Patterns
+│   └── designpatterns
 │
-└── dsa/
-├── ecommercesearch/
-└── financialforecasting/
+├── dsa
+│
+└── DSA-CSharp
+```
+
