@@ -1,6 +1,10 @@
-# Cognizant DN 5.0 – Engineering Concepts
+# Cognizant DotNet FSE Exercises
 
-This repository contains the mandatory exercises completed as part of the Cognizant Digital Nurture 5.0 DotNet FSE program.
+This repository contains the mandatory exercises completed as part of the **Cognizant Digital Nurture 5.0 DotNet FSE Program**.
+
+---
+
+# Engineering Concepts
 
 ## Design Principles & Patterns (Java)
 
@@ -8,7 +12,7 @@ This repository contains the mandatory exercises completed as part of the Cogniz
 
 Implemented a Logger class using the Singleton Design Pattern.
 
-**Features**
+#### Features
 
 * Ensures only one instance of Logger exists.
 * Provides a global access point to the Logger object.
@@ -17,7 +21,7 @@ Implemented a Logger class using the Singleton Design Pattern.
 
 Implemented the Factory Method Design Pattern to create different document types.
 
-**Document Types**
+#### Document Types
 
 * Word Document
 * PDF Document
@@ -31,20 +35,20 @@ Implemented the Factory Method Design Pattern to create different document types
 
 Implemented search operations on a product catalog.
 
-**Algorithms Used**
+#### Algorithms Used
 
 * Linear Search
 * Binary Search
 
-**Complexity Analysis**
+#### Complexity Analysis
 
-Linear Search
+**Linear Search**
 
 * Best Case: O(1)
 * Average Case: O(n)
 * Worst Case: O(n)
 
-Binary Search
+**Binary Search**
 
 * Best Case: O(1)
 * Average Case: O(log n)
@@ -56,12 +60,12 @@ Binary Search
 
 Implemented a recursive algorithm to predict future financial values.
 
-**Complexity Analysis**
+#### Complexity Analysis
 
 * Time Complexity: O(n)
 * Space Complexity: O(n)
 
-Optimization:
+#### Optimization Suggestions
 
 * Iterative approach
 * Direct mathematical formula
@@ -89,15 +93,73 @@ Implemented:
 
 ---
 
+# Advanced SQL Server
+
+## Exercise 1 – Ranking and Window Functions
+
+Implemented ranking and window functions to retrieve the top 3 most expensive products in each category.
+
+### Concepts Used
+
+* `ROW_NUMBER()`
+* `RANK()`
+* `DENSE_RANK()`
+* `OVER()`
+* `PARTITION BY`
+
+### Features
+
+* Created Products table
+* Inserted sample product data
+* Compared ranking functions
+* Retrieved Top 3 expensive products from each category
+
+---
+
+# Upcoming Modules
+
+* Entity Framework Core
+* NUnit and Moq
+* Web API
+* Microservices
+* Angular
+* React
+* Git
+
+---
+
+# Tools and Technologies
+
+* Java
+* C#
+* SQL Server LocalDB
+* SQL Server Management Studio (SSMS)
+* IntelliJ IDEA
+* Visual Studio 2022
+* VS Code
+* Git
+* GitHub
+
 ## Repository Structure
 
-```text
-Engineering Concepts
-├── Design principles & Patterns
-│   └── designpatterns
+Cognizant-DotNet-FSE-Exercises
 │
-├── dsa
+├── Engineering Concepts
+│   ├── Design principles & Patterns
+│   │   ├── factory_method_pattern
+│   │   └── singleton_pattern
+│   │
+│   ├── DSA-Java
+│   │   ├── ecommercesearch
+│   │   └── financialforecasting
+│   │
+│   └── DSA-CSharp
+│       ├── Exercise2_ECommerceSearch
+│       └── Exercise7_FinancialForecasting
 │
-└── DSA-CSharp
-```
-
+├── Advanced SQL server
+│   └── Exercise1_Ranking_Window_Functions
+│       └── Exercise1_Ranking_Window_Functions.sql
+│
+├── README.md
+└── .gitignore
