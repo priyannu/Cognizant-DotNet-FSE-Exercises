@@ -158,7 +158,7 @@ Cognizant-DotNet-FSE-Exercises
 │       └── Exercise7_FinancialForecasting
 │
 ├── Advanced SQL server
-│   └── Exercise1_Ranking_Window_Functions
+│   └── Advanced Concepts
 │       └── Exercise1_Ranking_Window_Functions.sql
 │
 ├── README.md
