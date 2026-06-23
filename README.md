@@ -114,6 +114,46 @@ Implemented ranking and window functions to retrieve the top 3 most expensive pr
 * Compared ranking functions
 * Retrieved Top 3 expensive products from each category
 
+## Stored Procedures
+
+### Exercise 1 – Create a Stored Procedure
+
+Created a stored procedure to insert employee details into the `Employees` table.
+
+### Concepts Used
+
+* `CREATE PROCEDURE`
+* Parameters
+* `INSERT INTO`
+* `EXEC`
+
+### Features
+
+* Created `sp_InsertEmployee`
+* Inserted a new employee record using the procedure
+* Verified insertion by querying the `Employees` table
+
+---
+
+### Exercise 5 – Return Data from a Stored Procedure
+
+Created a stored procedure to return the total number of employees in a specified department.
+
+### Concepts Used
+
+* `CREATE PROCEDURE`
+* Parameters
+* `COUNT()`
+* `SELECT`
+* `EXEC`
+
+### Features
+
+* Created `sp_GetEmployeeCount`
+* Returned employee count based on `DepartmentID`
+* Verified output using `EXEC sp_GetEmployeeCount 1`
+
+
 ---
 
 # Upcoming Modules
@@ -159,7 +199,16 @@ Cognizant-DotNet-FSE-Exercises
 │
 ├── Advanced SQL server
 │   └── Advanced Concepts
-│       └── Exercise1_Ranking_Window_Functions.sql
+│       └── Exercise1_Ranking_Window_Functions.sql 
+|
+|──Advanced SQL server ->Stored Procedures
+|   Exercise1_Create_Stored_Procedure
+│   ├── Exercise1_Create_Stored_Procedure.sql
+│   └── Exercise1_Output.png
+│
+└── Exercise5_Return_Data_From_Stored_Procedure
+    ├── Exercise5_Return_Data_From_Stored_Procedure.sql
+    └── Exercise5_Output.png
 │
 ├── README.md
 └── .gitignore
