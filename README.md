@@ -95,7 +95,9 @@ Implemented:
 
 # Advanced SQL Server
 
-## Exercise 1 – Ranking and Window Functions
+## Advanced concepts
+
+### Exercise 1 – Ranking and Window Functions
 
 Implemented ranking and window functions to retrieve the top 3 most expensive products in each category.
 
@@ -156,19 +158,8 @@ Created a stored procedure to return the total number of employees in a specifie
 
 ---
 
-# Upcoming Modules
 
-* Entity Framework Core
-* NUnit and Moq
-* Web API
-* Microservices
-* Angular
-* React
-* Git
-
----
-
-# Tools and Technologies
+## Tools and Technologies
 
 * Java
 * C#
