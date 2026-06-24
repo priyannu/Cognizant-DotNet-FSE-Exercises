@@ -1,10 +1,22 @@
 ### IntelliJ IDEA ###
 .idea/
 *.iml
-
-# IntelliJ
-.idea/
 out/
+
+# Build folders
+bin/
+obj/
+
+# NuGet packages
+packages/
+
+# Test files
+*.nupkg
+*.p7s
+
+# User files
+*.user
+*.suo
 
 out/
 !**/src/main/**/out/

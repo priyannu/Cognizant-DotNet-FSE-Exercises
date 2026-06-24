@@ -173,6 +173,7 @@ Created a stored procedure to return the total number of employees in a specifie
 
 ## Repository Structure
 
+```text
 Cognizant-DotNet-FSE-Exercises
 │
 ├── Engineering Concepts
@@ -189,17 +190,18 @@ Cognizant-DotNet-FSE-Exercises
 │       └── Exercise7_FinancialForecasting
 │
 ├── Advanced SQL server
-│   └── Advanced Concepts
-│       └── Exercise1_Ranking_Window_Functions.sql 
-|
-|──Advanced SQL server ->Stored Procedures
-|   Exercise1_Create_Stored_Procedure
-│   ├── Exercise1_Create_Stored_Procedure.sql
-│   └── Exercise1_Output.png
-│
-└── Exercise5_Return_Data_From_Stored_Procedure
-    ├── Exercise5_Return_Data_From_Stored_Procedure.sql
-    └── Exercise5_Output.png
+│   ├── Advanced Concepts
+│   │   └── Exercise1_Ranking_Window_Functions.sql
+│   │
+│   └── Stored Procedures
+│       ├── Exercise1_Create_Stored_Procedure
+│       │   ├── Exercise1_Create_Stored_Procedure.sql
+│       │   └── Exercise1_Output.png
+│       │
+│       └── Exercise5_Return_Data_From_Stored_Procedure
+│           ├── Exercise5_Return_Data_From_Stored_Procedure.sql
+│           └── Exercise5_Output.png
 │
 ├── README.md
 └── .gitignore
+```
