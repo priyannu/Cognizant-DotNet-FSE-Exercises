@@ -157,6 +157,30 @@ Created a stored procedure to return the total number of employees in a specifie
 
 
 ---
+# NUnit and Moq
+# Exercise 1 – TestFixture & Test
+
+Implemented NUnit test cases to validate the addition functionality of the `SimpleCalculator` class.
+
+## Concepts Used
+
+- TestFixture
+- Test
+- TestCase
+- SetUp
+- TearDown
+- Assert.That
+
+## Features
+
+- Created an NUnit Test Project
+- Added the CalcLibrary project as a reference
+- Implemented `CalculatorTests` class
+- Initialized the calculator object using `[SetUp]`
+- Released resources using `[TearDown]`
+- Used parameterized test cases with `[TestCase]`
+- Verified addition results using `Assert.That`
+- Successfully executed all test cases (3 Passed)
 
 
 ## Tools and Technologies
