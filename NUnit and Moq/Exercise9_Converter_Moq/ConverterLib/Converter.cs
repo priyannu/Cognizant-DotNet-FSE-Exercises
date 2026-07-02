@@ -10,6 +10,7 @@ namespace ConverterLib
     public class Converter : IConverter
     {
         IDollarToEuroExchangeRateFeed _exchangeRateFeed;
+
         public Converter(IDollarToEuroExchangeRateFeed exchangeRateFeed)
         {
             _exchangeRateFeed = exchangeRateFeed;
@@ -35,6 +36,7 @@ namespace ConverterLib
             return liter / 3.785;
         }
 
+        // RESTORED VERSION
         public double USDToEuro(double dollar)
         {
             return dollar * _exchangeRateFeed.GetActualUSDollarValue();

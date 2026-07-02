@@ -1,6 +1,6 @@
 # Cognizant DotNet FSE Exercises
 
-This repository contains the mandatory exercises completed as part of the **Cognizant Digital Nurture 5.0 DotNet FSE Program**.
+This repository contains the exercises completed as part of the **Cognizant Digital Nurture 5.0 DotNet FSE Program**.
 
 ---
 
@@ -157,12 +157,15 @@ Created a stored procedure to return the total number of employees in a specifie
 
 
 ---
-# NUnit and Moq
-# Exercise 1 – TestFixture & Test
+## NUnit and Moq
+
+### NUnit Exercises
+
+### Exercise 1 – TestFixture & Test
 
 Implemented NUnit test cases to validate the addition functionality of the `SimpleCalculator` class.
 
-## Concepts Used
+#### Concepts Used
 
 - TestFixture
 - Test
@@ -171,17 +174,143 @@ Implemented NUnit test cases to validate the addition functionality of the `Simp
 - TearDown
 - Assert.That
 
-## Features
+#### Features
 
-- Created an NUnit Test Project
-- Added the CalcLibrary project as a reference
-- Implemented `CalculatorTests` class
-- Initialized the calculator object using `[SetUp]`
-- Released resources using `[TearDown]`
-- Used parameterized test cases with `[TestCase]`
-- Verified addition results using `Assert.That`
-- Successfully executed all test cases (3 Passed)
+- Created NUnit Test Project
+- Added CalcLibrary reference
+- Implemented CalculatorTests
+- Executed all test cases successfully
 
+---
+
+### Exercise 2 – Leap Year Calculator
+
+Implemented NUnit test cases to verify leap year calculations.
+
+#### Features
+
+- Tested leap year scenarios
+- Verified expected outputs using assertions
+
+---
+
+### Exercise 3 – String Conversion
+
+Implemented NUnit test cases for string conversion methods.
+
+#### Features
+
+- Verified string conversion logic
+- Tested multiple input conditions
+
+---
+
+### Exercise 4 – Four Seasons
+
+Implemented NUnit test cases for season identification.
+
+#### Features
+
+- Tested valid month inputs
+- Verified correct season output
+
+---
+
+### Exercise 5 – User Management
+
+Implemented NUnit test cases for user validation methods.
+
+#### Features
+
+- Tested user validation scenarios
+- Verified expected behaviour
+
+---
+
+### Exercise 6 – Accounts Manager
+
+Implemented NUnit test cases for account-related operations.
+
+#### Features
+
+- Tested account creation and validation
+- Verified expected outputs
+
+---
+
+### Exercise 7 – Collections Library
+
+Implemented NUnit test cases for collection operations.
+
+#### Features
+
+- Tested collection manipulation methods
+- Verified outputs using assertions
+
+---
+
+### Exercise 8 – Utility Library
+
+Implemented NUnit test cases for utility helper methods.
+
+#### Features
+
+- Tested utility functions
+- Covered multiple scenarios
+
+---
+
+### Exercise 9 – Converter Library
+
+Implemented NUnit test cases for unit conversion methods.
+
+#### Concepts Used
+
+- TestFixture
+- TestCase
+- Assert.That
+
+#### Features
+
+- Tested Celsius to Kelvin conversion
+- Tested Kilogram to Pound conversion
+- Tested Kilometer to Mile conversion
+- Tested Liter to Gallon conversion
+- Tested USD to Euro conversion
+- Verified valid, invalid and boundary test cases
+- Successfully executed all test cases
+
+---
+
+## Moq Exercises
+
+### Exercise 1 – Write Testable Code with Moq
+
+Implemented unit testing for a customer mail communication module using Moq by mocking the external mail server dependency.
+
+#### Concepts Used
+
+- Mocking
+- Dependency Injection
+- Constructor Injection
+- Moq Framework
+- TestFixture
+- OneTimeSetUp
+- TestCase
+- Assert.That
+
+#### Features
+
+- Created `CustomerCommLib`
+- Implemented `IMailSender`
+- Implemented `MailSender`
+- Implemented `CustomerComm`
+- Injected dependency using Constructor Injection
+- Created mock object using `Mock<IMailSender>`
+- Configured mocked `SendMail()` using `It.IsAny<string>()`
+- Returned mocked value using `Returns(true)`
+- Verified `SendMailToCustomer()` returns `true`
+- Successfully executed the unit test (1 Passed)
 
 ## Tools and Technologies
 
@@ -190,7 +319,7 @@ Implemented NUnit test cases to validate the addition functionality of the `Simp
 * SQL Server LocalDB
 * SQL Server Management Studio (SSMS)
 * IntelliJ IDEA
-* Visual Studio 2022
+* Visual Studio 2026
 * VS Code
 * Git
 * GitHub
@@ -201,21 +330,23 @@ Implemented NUnit test cases to validate the addition functionality of the `Simp
 Cognizant-DotNet-FSE-Exercises
 │
 ├── Engineering Concepts
-│   ├── Design principles & Patterns
-│   │   ├── factory_method_pattern
-│   │   └── singleton_pattern
+│   ├── Design Principles & Patterns
+│   │   ├── Exercise1_SingletonPattern
+│   │   └── Exercise2_FactoryMethodPattern
 │   │
 │   ├── DSA-Java
-│   │   ├── ecommercesearch
-│   │   └── financialforecasting
+│   │   ├── Exercise2_ECommerceSearch
+│   │   └── Exercise7_FinancialForecasting
 │   │
 │   └── DSA-CSharp
 │       ├── Exercise2_ECommerceSearch
 │       └── Exercise7_FinancialForecasting
 │
-├── Advanced SQL server
+├── Advanced SQL Server
 │   ├── Advanced Concepts
-│   │   └── Exercise1_Ranking_Window_Functions.sql
+│   │   └── Exercise1_Ranking_Window_Functions
+│   │       ├── Exercise1_Ranking_Window_Functions.sql
+│   │       └── Exercise1_Output.png
 │   │
 │   └── Stored Procedures
 │       ├── Exercise1_Create_Stored_Procedure
@@ -225,6 +356,67 @@ Cognizant-DotNet-FSE-Exercises
 │       └── Exercise5_Return_Data_From_Stored_Procedure
 │           ├── Exercise5_Return_Data_From_Stored_Procedure.sql
 │           └── Exercise5_Output.png
+│
+├── NUnit and Moq
+│   ├── Exercise1_TestFixture_Test
+│   │   ├── CalcLibrary
+│   │   ├── CalculatorTests.cs
+│   │   ├── Output.png
+│   │   └── README.md
+│   │
+│   ├── Exercise2_LeapYearCalculator
+│   │   ├── LeapYearCalculatorLib
+│   │   ├── LeapYearCalculatorTests.cs
+│   │   ├── Output.png
+│   │   └── README.md
+│   │
+│   ├── Exercise3_StringConverter
+│   │   ├── ConverterLib
+│   │   ├── ConverterTests.cs
+│   │   ├── Output.png
+│   │   └── README.md
+│   │
+│   ├── Exercise4_FourSeasons
+│   │   ├── FourSeasonsLib
+│   │   ├── FourSeasonsTests.cs
+│   │   ├── Output.png
+│   │   └── README.md
+│   │
+│   ├── Exercise5_UserManager
+│   │   ├── UserManagerLib
+│   │   ├── UserManagerTests.cs
+│   │   ├── Output.png
+│   │   └── README.md
+│   │
+│   ├── Exercise6_AccountsManager
+│   │   ├── AccountsManagerLib
+│   │   ├── AccountsManagerTests.cs
+│   │   ├── Output.png
+│   │   └── README.md
+│   │
+│   ├── Exercise7_Collections
+│   │   ├── CollectionsLib
+│   │   ├── CollectionsTests.cs
+│   │   ├── Output.png
+│   │   └── README.md
+│   │
+│   ├── Exercise8_UtilityLibrary
+│   │   ├── UtilLib
+│   │   ├── UtilTests.cs
+│   │   ├── Output.png
+│   │   └── README.md
+│   │
+│   ├── Exercise9_Converter
+│   │   ├── ConverterLib
+│   │   ├── ConverterTests.cs
+│   │   ├── Output.png
+│   │   └── README.md
+│   │
+│   └── Exercise1_CustomerComm_Moq
+│       ├── CustomerCommLib
+│       ├── CustomerComm.Tests
+│       ├── Output.png
+│       └── README.md
 │
 ├── README.md
 └── .gitignore

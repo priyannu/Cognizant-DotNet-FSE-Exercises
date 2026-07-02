@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="../ConverterTests.cs/ConverterTests.cs.csproj" />
+  <Project Path="ConverterLib.csproj" />
+</Solution>
