@@ -299,6 +299,7 @@ Implemented unit testing for a customer mail communication module using Moq by m
 - TestCase
 - Assert.That
 
+
 #### Features
 
 - Created `CustomerCommLib`
@@ -312,13 +313,120 @@ Implemented unit testing for a customer mail communication module using Moq by m
 - Verified `SendMailToCustomer()` returns `true`
 - Successfully executed the unit test (1 Passed)
 
+
+
+---
+
+# Entity Framework Core
+
+Implemented a Retail Inventory Management System using Entity Framework Core and SQL Server to demonstrate ORM concepts, database configuration, migrations, data insertion, and data retrieval.
+
+### Exercise 1 – Understanding ORM
+
+Introduced the fundamentals of Object Relational Mapping (ORM) and configured an EF Core Console Application.
+
+#### Concepts Used
+
+- Object Relational Mapping (ORM)
+- Entity Framework Core
+- Entity Classes
+- SQL Server Provider
+
+#### Features
+
+- Created RetailInventory Console Application
+- Configured EF Core packages
+- Created Product and Category entity classes
+- Established project structure
+
+---
+
+### Exercise 2 – Database Context
+
+Configured the database context and connected the application to SQL Server.
+
+#### Concepts Used
+
+- DbContext
+- DbSet
+- OnConfiguring()
+- SQL Server Connection
+
+#### Features
+
+- Created InventoryContext
+- Configured SQL Server LocalDB
+- Added DbSet for Products and Categories
+- Connected EF Core with SQL Server
+
+---
+
+### Exercise 3 – Migrations
+
+Created and applied database migrations using EF Core CLI.
+
+#### Concepts Used
+
+- EF Core CLI
+- Migrations
+- InitialCreate
+- Database Update
+
+#### Features
+
+- Generated InitialCreate migration
+- Applied migration to SQL Server
+- Created RetailInventoryDB
+- Generated Categories and Products tables
+
+---
+
+### Exercise 4 – Insert Initial Data
+
+Inserted sample records into the database using asynchronous EF Core methods.
+
+#### Concepts Used
+
+- AddRangeAsync()
+- SaveChangesAsync()
+- Entity Relationships
+
+#### Features
+
+- Inserted Categories
+- Inserted Products
+- Stored records in SQL Server
+- Verified inserted data in SSMS
+
+---
+
+### Exercise 5 – Retrieve Data
+
+Retrieved records from SQL Server using asynchronous EF Core queries.
+
+#### Concepts Used
+
+- ToListAsync()
+- FindAsync()
+- FirstOrDefaultAsync()
+- LINQ Queries
+
+#### Features
+
+- Retrieved all products
+- Retrieved product by ID
+- Retrieved product using conditions
+- Displayed retrieved records in the console
+
+---
+
 ## Tools and Technologies
 
-* Java
 * C#
 * SQL Server LocalDB
 * SQL Server Management Studio (SSMS)
 * IntelliJ IDEA
+* Java
 * Visual Studio 2026
 * VS Code
 * Git
@@ -417,6 +525,37 @@ Cognizant-DotNet-FSE-Exercises
 │       ├── CustomerComm.Tests
 │       ├── Output.png
 │       └── README.md
+│
+├── Entity Framework Core
+│   ├── EF_Core_Labs
+│   │   └── RetailInventory
+│   │       ├── RetailInventory.sln
+│   │       ├── RetailInventory
+│   │       │   ├── RetailInventory.csproj
+│   │       │   ├── Category.cs
+│   │       │   ├── Product.cs
+│   │       │   ├── InventoryContext.cs
+│   │       │   ├── Program.cs
+│   │       │   └── Migrations
+│   │       └── .gitignore
+│   │
+│   ├── Lab1_Understanding_ORM
+│   │   └── Lab1_Output.png
+│   │
+│   ├── Lab2_Database_Context
+│   │   └── Lab2_Output.png
+│   │
+│   ├── Lab3_Migrations
+│   │   ├── Lab3_VisualStudio.png
+│   │   └── Lab3_SSMS.png
+│   │
+│   ├── Lab4_Insert_Data
+│   │   ├── Lab4_Output1.png
+│   │   ├── Lab4_Output2.png
+│   │   └── Lab4_Output3.png
+│   │
+│   └── Lab5_Retrieve_Data
+│       └── Lab5_Output.png
 │
 ├── README.md
 └── .gitignore
