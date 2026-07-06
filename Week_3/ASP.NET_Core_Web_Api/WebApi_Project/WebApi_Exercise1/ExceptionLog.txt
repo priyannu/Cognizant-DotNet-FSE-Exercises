@@ -1,0 +1,2 @@
+[05-07-2026 02:06:26] This is a custom exception.
+[05-07-2026 10:45:56] IDX10720: Unable to create KeyedHashAlgorithm for algorithm 'HS256', the key size must be greater than: '256' bits, key has '144' bits. (Parameter 'keyBytes')

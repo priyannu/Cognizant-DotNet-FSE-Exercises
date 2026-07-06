@@ -147,15 +147,17 @@
 //    }
 //}
 
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using WebApi_Exercise1.Filters;
 using WebApi_Exercise1.Models;
 
 namespace WebApi_Exercise1.Controllers
 {
     [ApiController]
     [Route("api/Emp")]
-    //[CustomAuthFilter]
+    //[Authorize]
+    //[Authorize(Roles = "POC")]
+    [Authorize(Roles = "Admin,POC")]
     public class EmployeeController : ControllerBase
     {
         private static readonly List<Employee> Employees = GetStandardEmployeeList();
@@ -170,11 +172,23 @@ namespace WebApi_Exercise1.Controllers
                     Name = "Annu Priya",
                     Salary = 50000,
                     Permanent = true,
-                    Department = new Department { Id = 1, Name = "CSE" },
+                    Department = new Department
+                    {
+                        Id = 1,
+                        Name = "CSE"
+                    },
                     Skills = new List<Skill>
                     {
-                        new Skill { Id = 1, Name = "C#" },
-                        new Skill { Id = 2, Name = "SQL" }
+                        new Skill
+                        {
+                            Id = 1,
+                            Name = "C#"
+                        },
+                        new Skill
+                        {
+                            Id = 2,
+                            Name = "SQL"
+                        }
                     },
                     DateOfBirth = new DateTime(2004, 5, 10)
                 }
@@ -183,6 +197,7 @@ namespace WebApi_Exercise1.Controllers
 
         [HttpGet]
         [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         public ActionResult<List<Employee>> Get()
         {

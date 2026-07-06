@@ -420,142 +420,274 @@ Retrieved records from SQL Server using asynchronous EF Core queries.
 
 ---
 
+# ASP.NET Core Web API
+
+Implemented RESTful Web APIs using ASP.NET Core, covering CRUD operations, routing, model binding, validation, middleware, JWT authentication, role-based authorization, and Apache Kafka integration.
+
+---
+
+## Exercise 1 – Building RESTful Web Services
+
+Created a RESTful Employee API using ASP.NET Core.
+
+### Concepts Used
+
+- ASP.NET Core Web API
+- REST Architecture
+- HTTP Methods (GET, POST, PUT, DELETE)
+- API Controllers
+- Routing
+
+### Features
+
+- Created Employee REST API
+- Implemented CRUD operations
+- Tested endpoints using Swagger
+- Verified API responses
+
+---
+
+## Exercise 2 – Controllers and Actions
+
+Implemented controller actions with routing and parameter binding.
+
+### Concepts Used
+
+- Controller
+- Action Methods
+- Route Attributes
+- Route Parameters
+- Query Parameters
+
+### Features
+
+- Implemented GET endpoints
+- Implemented POST endpoint
+- Implemented route-based actions
+- Tested using Swagger and Postman
+
+---
+
+## Exercise 3 – Working with Models
+
+Implemented model binding, validation, authorization, and exception handling.
+
+### Concepts Used
+
+- Model Binding
+- Model Validation
+- JWT Authentication
+- Authorization
+- Exception Filters
+
+### Features
+
+#### Part 1
+
+- Created Employee model
+- Implemented model binding
+- Performed CRUD operations
+
+#### Part 2
+
+- Configured JWT Authentication
+- Protected Employee endpoints
+- Verified Unauthorized (401) responses
+
+#### Part 3
+
+- Implemented Global Exception Filter
+- Returned standardized error responses
+
+---
+
+## Exercise 4 – Validation and Error Handling
+
+Implemented server-side validation and improved API error handling.
+
+### Concepts Used
+
+- Data Annotations
+- Model Validation
+- BadRequest Responses
+- Validation Attributes
+
+### Features
+
+- Added validation attributes
+- Returned validation errors
+- Updated Employee records
+- Tested validation scenarios
+
+---
+
+## Exercise 5 – Custom Middleware
+
+Implemented JWT authentication, custom authorization, and middleware pipeline.
+
+### Concepts Used
+
+- Custom Middleware
+- JWT Authentication
+- Role-Based Authorization
+- Authentication Pipeline
+
+### Features
+
+- Generated JWT Tokens
+- Implemented AuthController
+- Protected APIs using JWT
+- Implemented Role-Based Authorization
+- Tested Admin and POC roles
+- Verified Unauthorized (401) responses
+- Verified Authorized (200) responses
+- Tested APIs using Swagger and Postman
+
+---
+
+## Exercise 6 – Apache Kafka
+
+Implemented Apache Kafka integration with ASP.NET Core and Windows Forms.
+
+### Hands-On 1 – Kafka Producer and Consumer
+
+### Concepts Used
+
+- Apache Kafka
+- Producer
+- Consumer
+- Topics
+- Kafka Server
+- ZooKeeper
+
+### Features
+
+- Configured Kafka Server
+- Started ZooKeeper
+- Created Kafka Topic
+- Produced messages
+- Consumed messages successfully
+
+---
+
+### Hands-On 2 – Kafka Chat Application
+
+Built a Windows Forms chat application using Apache Kafka messaging.
+
+### Concepts Used
+
+- Windows Forms
+- Apache Kafka
+- Producer API
+- Consumer API
+- Asynchronous Messaging
+
+### Features
+
+- Designed WinForms Chat UI
+- Configured Kafka Producer
+- Configured Kafka Consumer
+- Sent messages to Kafka Topic
+- Received messages in real time
+- Displayed chat messages inside the application
+
+---
+
+
 ## Tools and Technologies
 
-* C#
-* SQL Server LocalDB
-* SQL Server Management Studio (SSMS)
-* IntelliJ IDEA
-* Java
-* Visual Studio 2026
-* VS Code
-* Git
-* GitHub
+### Languages
+- C#
+- Java
+- SQL
+
+### Frameworks & Libraries
+- ASP.NET Core Web API
+- Entity Framework Core
+- NUnit
+- Moq
+- Apache Kafka (Confluent.Kafka)
+
+### Databases
+- SQL Server
+- SQL Server LocalDB
+
+### Development Tools
+
+- Visual Studio 2026
+- Visual Studio Code
+- IntelliJ IDEA
+- SQL Server Management Studio (SSMS)
+- Swagger UI
+- Postman
+
+### Version Control
+- Git
+- GitHub
 
 ## Repository Structure
 
 ```text
-Cognizant-DotNet-FSE-Exercises
+Cognizant_DN5.0
 │
-├── Engineering Concepts
-│   ├── Design Principles & Patterns
-│   │   ├── Exercise1_SingletonPattern
-│   │   └── Exercise2_FactoryMethodPattern
+├── Week_1
+│   ├── Engineering Concepts
+│   │   ├── Design Patterns
+│   │   │   ├── Exercise1_SingletonPattern
+│   │   │   └── Exercise2_FactoryMethodPattern
+│   │   │
+│   │   ├── DSA-Java
+│   │   │   ├── Exercise2_ECommerceSearch
+│   │   │   └── Exercise7_FinancialForecasting
+│   │   │
+│   │   └── DSA-CSharp
+│   │       ├── Exercise2_ECommerceSearch
+│   │       └── Exercise7_FinancialForecasting
 │   │
-│   ├── DSA-Java
-│   │   ├── Exercise2_ECommerceSearch
-│   │   └── Exercise7_FinancialForecasting
+│   ├── Advanced SQL Server
+│   │   ├── Advanced Concepts
+│   │   │   └── Exercise1_Ranking_Window_Functions
+│   │   │
+│   │   └── Stored Procedures
+│   │       ├── Exercise1_Create_Stored_Procedure
+│   │       └── Exercise5_Return_Data_From_Stored_Procedure
 │   │
-│   └── DSA-CSharp
-│       ├── Exercise2_ECommerceSearch
-│       └── Exercise7_FinancialForecasting
-│
-├── Advanced SQL Server
-│   ├── Advanced Concepts
-│   │   └── Exercise1_Ranking_Window_Functions
-│   │       ├── Exercise1_Ranking_Window_Functions.sql
-│   │       └── Exercise1_Output.png
-│   │
-│   └── Stored Procedures
-│       ├── Exercise1_Create_Stored_Procedure
-│       │   ├── Exercise1_Create_Stored_Procedure.sql
-│       │   └── Exercise1_Output.png
+│   └── NUnit and Moq
+│       ├── NUnit
+│       │   ├── Exercise1_TestFixture_Test
+│       │   ├── Exercise2_LeapYearCalculator
+│       │   ├── Exercise3_StringConverter
+│       │   ├── Exercise4_FourSeasons
+│       │   ├── Exercise5_UserManager
+│       │   ├── Exercise6_AccountsManager
+│       │   ├── Exercise7_Collections
+│       │   ├── Exercise8_UtilityLibrary
+│       │   └── Exercise9_Converter
 │       │
-│       └── Exercise5_Return_Data_From_Stored_Procedure
-│           ├── Exercise5_Return_Data_From_Stored_Procedure.sql
-│           └── Exercise5_Output.png
+│       └── Moq
+│           └── Exercise1_CustomerComm_Moq
 │
-├── NUnit and Moq
-│   ├── Exercise1_TestFixture_Test
-│   │   ├── CalcLibrary
-│   │   ├── CalculatorTests.cs
-│   │   ├── Output.png
-│   │   └── README.md
-│   │
-│   ├── Exercise2_LeapYearCalculator
-│   │   ├── LeapYearCalculatorLib
-│   │   ├── LeapYearCalculatorTests.cs
-│   │   ├── Output.png
-│   │   └── README.md
-│   │
-│   ├── Exercise3_StringConverter
-│   │   ├── ConverterLib
-│   │   ├── ConverterTests.cs
-│   │   ├── Output.png
-│   │   └── README.md
-│   │
-│   ├── Exercise4_FourSeasons
-│   │   ├── FourSeasonsLib
-│   │   ├── FourSeasonsTests.cs
-│   │   ├── Output.png
-│   │   └── README.md
-│   │
-│   ├── Exercise5_UserManager
-│   │   ├── UserManagerLib
-│   │   ├── UserManagerTests.cs
-│   │   ├── Output.png
-│   │   └── README.md
-│   │
-│   ├── Exercise6_AccountsManager
-│   │   ├── AccountsManagerLib
-│   │   ├── AccountsManagerTests.cs
-│   │   ├── Output.png
-│   │   └── README.md
-│   │
-│   ├── Exercise7_Collections
-│   │   ├── CollectionsLib
-│   │   ├── CollectionsTests.cs
-│   │   ├── Output.png
-│   │   └── README.md
-│   │
-│   ├── Exercise8_UtilityLibrary
-│   │   ├── UtilLib
-│   │   ├── UtilTests.cs
-│   │   ├── Output.png
-│   │   └── README.md
-│   │
-│   ├── Exercise9_Converter
-│   │   ├── ConverterLib
-│   │   ├── ConverterTests.cs
-│   │   ├── Output.png
-│   │   └── README.md
-│   │
-│   └── Exercise1_CustomerComm_Moq
-│       ├── CustomerCommLib
-│       ├── CustomerComm.Tests
-│       ├── Output.png
-│       └── README.md
+├── Week_2
+│   └── Entity Framework Core
+│       ├── EF_Core_Labs
+│       │   └── RetailInventory
+│       ├── Lab1_Understanding_ORM
+│       ├── Lab2_Database_Context
+│       ├── Lab3_Migrations
+│       ├── Lab4_Insert_Data
+│       └── Lab5_Retrieve_Data
 │
-├── Entity Framework Core
-│   ├── EF_Core_Labs
-│   │   └── RetailInventory
-│   │       ├── RetailInventory.sln
-│   │       ├── RetailInventory
-│   │       │   ├── RetailInventory.csproj
-│   │       │   ├── Category.cs
-│   │       │   ├── Product.cs
-│   │       │   ├── InventoryContext.cs
-│   │       │   ├── Program.cs
-│   │       │   └── Migrations
-│   │       └── .gitignore
-│   │
-│   ├── Lab1_Understanding_ORM
-│   │   └── Lab1_Output.png
-│   │
-│   ├── Lab2_Database_Context
-│   │   └── Lab2_Output.png
-│   │
-│   ├── Lab3_Migrations
-│   │   ├── Lab3_VisualStudio.png
-│   │   └── Lab3_SSMS.png
-│   │
-│   ├── Lab4_Insert_Data
-│   │   ├── Lab4_Output1.png
-│   │   ├── Lab4_Output2.png
-│   │   └── Lab4_Output3.png
-│   │
-│   └── Lab5_Retrieve_Data
-│       └── Lab5_Output.png
+├── Week_3
+│   └── ASP.NET_Core_Web_API
+│       ├── WebApi_Project
+│       ├── Exercise1_Building_RESTful_Web_Services
+│       ├── Exercise2_Controllers_and_Actions
+│       ├── Exercise3_Working_with_Models
+│       ├── Exercise4_Validation_and_Error_Handling
+│       ├── Exercise5_Custom_Middleware
+│       └── Exercise6_Apache_Kafka
+│           ├── Hands_On1
+│           └── Hands_On2
 │
 ├── README.md
 └── .gitignore

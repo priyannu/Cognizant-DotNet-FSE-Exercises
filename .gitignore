@@ -2,26 +2,30 @@
 .idea/
 *.iml
 out/
+.kotlin/
 
-# Build folders
+### Visual Studio ###
+.vs/
 bin/
 obj/
-
-# NuGet packages
-packages/
-
-# Test files
-*.nupkg
-*.p7s
-
-# User files
 *.user
 *.suo
 
+### VS Code ###
+.vscode/
+
+### Build folders ###
+bin/
+obj/
 out/
-!**/src/main/**/out/
-!**/src/test/**/out/
-.kotlin
+
+### NuGet ###
+packages/
+*.nupkg
+*.p7s
+
+### Java ###
+*.class
 
 ### Eclipse ###
 .apt_generated
@@ -31,7 +35,6 @@ out/
 .settings
 .springBeans
 .sts4-cache
-bin/
 !**/src/main/**/bin/
 !**/src/test/**/bin/
 
@@ -42,20 +45,17 @@ bin/
 /nbdist/
 /.nb-gradle/
 
-### VS Code ###
-.vscode/
-
-# Visual Studio
-.vs/
-bin/
-obj/
-
-### Java ###
-*.class
-
 ### Logs ###
 *.log
 
 ### OS Files ###
 .DS_Store
 Thumbs.db
+
+### ASP.NET ###
+appsettings.Development.json
+
+### Rider ###
+.idea/
+_ReSharper*/
+*.DotSettings.user
