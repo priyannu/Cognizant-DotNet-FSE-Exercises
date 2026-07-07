@@ -591,6 +591,32 @@ Built a Windows Forms chat application using Apache Kafka messaging.
 - Received messages in real time
 - Displayed chat messages inside the application
 
+# Microservices
+
+## Exercise 1 – JWT Authentication
+
+Implemented JWT-based authentication and authorization for an ASP.NET Core Web API using JSON Web Tokens (JWT).
+
+### Concepts Used
+
+- JWT Authentication
+- JWT Authorization
+- Bearer Token
+- Authentication Middleware
+- Authorization Middleware
+- Token Validation
+- Swagger API Testing
+
+### Features
+
+- Configured JWT settings in `appsettings.json`
+- Generated JWT tokens after successful login
+- Implemented `AuthController`
+- Created protected endpoints using `[Authorize]`
+- Configured Authentication and Authorization middleware
+- Verified Unauthorized (401) responses for protected APIs
+- Tested APIs using Swagger UI
+
 ---
 
 
@@ -604,6 +630,7 @@ Built a Windows Forms chat application using Apache Kafka messaging.
 ### Frameworks & Libraries
 - ASP.NET Core Web API
 - Entity Framework Core
+- JWT Authentication
 - NUnit
 - Moq
 - Apache Kafka (Confluent.Kafka)
@@ -688,6 +715,10 @@ Cognizant_DN5.0
 │       └── Exercise6_Apache_Kafka
 │           ├── Hands_On1
 │           └── Hands_On2
+│
+├── Week_4
+│   └── Microservices
+│       └── Exercise1_JWT_Authentication
 │
 ├── README.md
 └── .gitignore
