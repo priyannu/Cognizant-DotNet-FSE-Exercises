@@ -59,3 +59,23 @@ appsettings.Local.json
 ### Rider ###
 _ReSharper*/
 *.DotSettings.user
+
+### Angular / Node.js ###
+node_modules/
+dist/
+.angular/
+.angular/cache/
+coverage/
+
+### npm ###
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+### Environment Files ###
+.env
+.env.local
+
+### Angular Cache ###
+.cache/
