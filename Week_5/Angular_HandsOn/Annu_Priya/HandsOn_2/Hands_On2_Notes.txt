@@ -1,0 +1,88 @@
+==========================================================
+COGNIZANT DIGITAL NURTURE 5.0
+Angular Hands-On 2
+Data Binding, Lifecycle Hooks & Component Communication
+==========================================================
+
+Project:
+Student Course Portal
+
+Project Folder:
+Week_5/Angular_HandsOn/Annu_Priya/student-course-portal
+
+----------------------------------------------------------
+Task 1 - Data Binding
+----------------------------------------------------------
+
+In this task, I implemented the different types of data binding available in Angular.
+
+- Used string interpolation ({{ }}) to display the portal name.
+- Used property binding to enable/disable the Enroll button.
+- Added event binding so that clicking the Enroll button displays a message.
+- Implemented two-way data binding using ngModel for the search box.
+- Imported FormsModule to support ngModel.
+
+The search text updates instantly as the user types.
+
+----------------------------------------------------------
+Task 2 - Lifecycle Hooks
+----------------------------------------------------------
+
+Implemented the following lifecycle hooks:
+
+- ngOnInit()
+  Displays "HomeComponent initialised - courses loaded" in the browser console when the component loads.
+
+- ngOnChanges()
+  Implemented inside CourseCardComponent.
+  Logs the previous and current course values whenever the input changes.
+
+- ngOnDestroy()
+  Displays "HomeComponent destroyed" when the component is destroyed.
+
+----------------------------------------------------------
+Task 3 - Parent-Child Communication
+----------------------------------------------------------
+
+Created a reusable CourseCardComponent.
+
+Implemented:
+
+- @Input() to receive course details from the parent component.
+- @Output() with EventEmitter to notify the parent when the Enroll button is clicked.
+
+In CourseListComponent:
+
+- Created a list of 5 sample courses.
+- Displayed each course using CourseCardComponent.
+- Logged the selected course ID in the browser console.
+- Displayed the selected course ID below the course list after clicking Enroll.
+
+----------------------------------------------------------
+Result
+----------------------------------------------------------
+
+The application was built and executed successfully.
+
+Features implemented:
+
+- String Interpolation
+- Property Binding
+- Event Binding
+- Two-Way Binding (ngModel)
+- ngOnInit
+- ngOnChanges
+- ngOnDestroy
+- @Input
+- @Output
+- EventEmitter
+- Parent-Child Communication
+
+Commands used:
+
+ng build
+ng serve
+
+----------------------------------------------------------
+Hands-On 2 Completed Successfully
+----------------------------------------------------------
