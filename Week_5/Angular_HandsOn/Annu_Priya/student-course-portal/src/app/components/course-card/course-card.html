@@ -1,11 +1,72 @@
-<div class="course-card">
+<div
+  class="course-card"
+  [ngClass]="cardClasses"
+  [ngStyle]="{
+    'border-left-color':
+      course.gradeStatus === 'passed'
+        ? 'green'
+        : course.gradeStatus === 'failed'
+        ? 'red'
+        : 'grey'
+  }"
+  [appHighlight]="'lightblue'"
+>
   <h3>{{ course.name }}</h3>
 
   <p><strong>ID:</strong> {{ course.id }}</p>
+
   <p><strong>Code:</strong> {{ course.code }}</p>
-  <p><strong>Credits:</strong> {{ course.credits }}</p>
+
+  <p>
+    <strong>Credits:</strong>
+    {{ course.credits | creditLabel }}
+  </p>
+
+  <div [ngSwitch]="course.gradeStatus">
+
+    <span
+      *ngSwitchCase="'passed'"
+      class="status-badge status-badge--passed">
+      Passed
+    </span>
+
+    <span
+      *ngSwitchCase="'failed'"
+      class="status-badge status-badge--failed">
+      Failed
+    </span>
+
+    <span
+      *ngSwitchCase="'pending'"
+      class="status-badge status-badge--pending">
+      Pending
+    </span>
+
+  </div>
+
+  <div
+    *ngIf="isExpanded"
+    class="course-details">
+
+    <p>
+      This course is part of the Student Course Portal curriculum.
+    </p>
+
+    <p>
+      Enrollment status:
+      {{ course.enrolled ? 'Enrolled' : 'Not enrolled' }}
+    </p>
+
+  </div>
+
+  <br>
 
   <button (click)="requestEnrollment()">
     Enroll
   </button>
+
+  <button (click)="toggleExpanded()">
+    {{ isExpanded ? 'Hide Details' : 'Show Details' }}
+  </button>
+
 </div>
