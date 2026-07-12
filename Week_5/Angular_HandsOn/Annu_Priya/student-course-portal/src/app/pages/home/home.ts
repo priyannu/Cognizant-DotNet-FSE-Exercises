@@ -1,5 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -14,6 +15,8 @@ export class Home implements OnInit, OnDestroy {
   message = '';
   searchTerm = '';
   availableCourses = 0;
+
+  constructor(private router: Router) {}
 
   // [property] is one-way binding from component to DOM,
   // while [(ngModel)] is two-way binding between component and DOM.
@@ -31,5 +34,6 @@ export class Home implements OnInit, OnDestroy {
 
   onEnrollClick(): void {
     this.message = 'Enrollment opened!';
+    this.router.navigate(['/enroll']);
   }
 }
