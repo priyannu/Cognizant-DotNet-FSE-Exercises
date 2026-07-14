@@ -3,6 +3,7 @@ import { Routes } from '@angular/router';
 import { Home } from './pages/home/home';
 import { StudentProfile } from './pages/student-profile/student-profile';
 import { EnrollmentForm } from './pages/enrollment-form/enrollment-form';
+import { ReactiveEnrollmentForm } from './pages/reactive-enrollment-form/reactive-enrollment-form';
 
 export const routes: Routes = [
   {
@@ -16,5 +17,9 @@ export const routes: Routes = [
   {
     path: 'enroll',
     component: EnrollmentForm
+  },
+  {
+    path: 'enroll-reactive',
+    component: ReactiveEnrollmentForm
   }
 ];
