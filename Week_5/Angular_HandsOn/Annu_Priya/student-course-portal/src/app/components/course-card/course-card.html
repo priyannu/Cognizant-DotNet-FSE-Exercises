@@ -23,50 +23,62 @@
   </p>
 
   <div [ngSwitch]="course.gradeStatus">
-
     <span
       *ngSwitchCase="'passed'"
-      class="status-badge status-badge--passed">
+      class="status-badge status-badge--passed"
+    >
       Passed
     </span>
 
     <span
       *ngSwitchCase="'failed'"
-      class="status-badge status-badge--failed">
+      class="status-badge status-badge--failed"
+    >
       Failed
     </span>
 
     <span
       *ngSwitchCase="'pending'"
-      class="status-badge status-badge--pending">
+      class="status-badge status-badge--pending"
+    >
       Pending
     </span>
-
   </div>
 
   <div
     *ngIf="isExpanded"
-    class="course-details">
-
+    class="course-details"
+  >
     <p>
       This course is part of the Student Course Portal curriculum.
     </p>
 
-   <p>
-  Enrollment status:
-  {{ isEnrolled() ? 'Enrolled' : 'Not enrolled' }}
-</p>
-
+    <p>
+      Enrollment status:
+      {{ isEnrolled() ? 'Enrolled' : 'Not enrolled' }}
+    </p>
   </div>
 
-  <br>
+  <br />
 
-<button (click)="toggleEnrollment()">
-  {{ isEnrolled() ? 'Unenroll' : 'Enroll' }}
-</button>
+  <button
+    type="button"
+    (click)="toggleEnrollment()"
+  >
+    {{ isEnrolled() ? 'Unenroll' : 'Enroll' }}
+  </button>
 
-  <button (click)="toggleExpanded()">
+  <button
+    type="button"
+    (click)="toggleExpanded()"
+  >
     {{ isExpanded ? 'Hide Details' : 'Show Details' }}
   </button>
 
+  <button
+    type="button"
+    (click)="goToDetails()"
+  >
+    View Course
+  </button>
 </div>

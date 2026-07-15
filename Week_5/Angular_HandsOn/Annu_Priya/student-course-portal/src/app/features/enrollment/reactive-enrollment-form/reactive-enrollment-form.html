@@ -1,0 +1,55 @@
+<h2>Reactive Enrollment Form</h2>
+
+<form
+  [formGroup]="enrollForm"
+  (ngSubmit)="submitForm()"
+>
+  <div>
+    <label for="studentName">Student Name</label>
+    <br />
+    <input
+      id="studentName"
+      type="text"
+      formControlName="studentName"
+    />
+  </div>
+
+  <br />
+
+  <div>
+    <label for="studentEmail">Student Email</label>
+    <br />
+    <input
+      id="studentEmail"
+      type="email"
+      formControlName="studentEmail"
+    />
+  </div>
+
+  <br />
+
+  <div>
+    <label for="courseId">Course ID</label>
+    <br />
+    <input
+      id="courseId"
+      type="number"
+      formControlName="courseId"
+    />
+  </div>
+
+  <br />
+
+  <button
+    type="submit"
+    [disabled]="enrollForm.invalid"
+  >
+    Submit
+  </button>
+</form>
+
+<br />
+
+<a routerLink="/">
+  Go to Home
+</a>

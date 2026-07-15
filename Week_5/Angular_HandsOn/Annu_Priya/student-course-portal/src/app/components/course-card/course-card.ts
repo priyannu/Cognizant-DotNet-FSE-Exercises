@@ -7,6 +7,7 @@ import {
   Output,
   SimpleChanges
 } from '@angular/core';
+import { Router } from '@angular/router';
 
 import { Course } from '../../models/course.model';
 import { Highlight } from '../../directives/highlight';
@@ -21,36 +22,37 @@ import { EnrollmentService } from '../../services/enrollment';
   styleUrl: './course-card.css'
 })
 export class CourseCard implements OnChanges {
-
   @Input() course!: Course;
 
   @Output() enrollRequested = new EventEmitter<number>();
 
   isExpanded = false;
 
-  constructor(private enrollmentService: EnrollmentService) {}
+  constructor(
+    private enrollmentService: EnrollmentService,
+    private router: Router
+  ) {}
 
   ngOnChanges(changes: SimpleChanges): void {
     if (changes['course']) {
-      console.log('Previous course value:', changes['course'].previousValue);
-      console.log('Current course value:', changes['course'].currentValue);
+      console.log(
+        'Previous course value:',
+        changes['course'].previousValue
+      );
+
+      console.log(
+        'Current course value:',
+        changes['course'].currentValue
+      );
     }
   }
 
   toggleEnrollment(): void {
-
-    console.log('toggleEnrollment clicked:', this.course.id);
-
     if (this.enrollmentService.isEnrolled(this.course.id)) {
       this.enrollmentService.unenroll(this.course.id);
     } else {
       this.enrollmentService.enroll(this.course.id);
     }
-
-    console.log(
-      'Enrollment state:',
-      this.enrollmentService.isEnrolled(this.course.id)
-    );
 
     this.enrollRequested.emit(this.course.id);
   }
@@ -61,6 +63,10 @@ export class CourseCard implements OnChanges {
 
   toggleExpanded(): void {
     this.isExpanded = !this.isExpanded;
+  }
+
+  goToDetails(): void {
+    this.router.navigate(['/courses', this.course.id]);
   }
 
   get cardClasses(): Record<string, boolean> {
