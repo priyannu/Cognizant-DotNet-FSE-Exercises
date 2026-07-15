@@ -1,11 +1,22 @@
+import { CommonModule } from '@angular/common';
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { Router } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
+
+import { CourseSummaryWidget } from '../../components/course-summary-widget/course-summary-widget';
+import { Notification } from '../../components/notification/notification';
+import { CourseService } from '../../services/course';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [FormsModule],
+  imports: [
+    CommonModule,
+    FormsModule,
+    RouterModule,
+    CourseSummaryWidget,
+    Notification
+  ],
   templateUrl: './home.html',
   styleUrl: './home.css'
 })
@@ -16,14 +27,13 @@ export class Home implements OnInit, OnDestroy {
   searchTerm = '';
   availableCourses = 0;
 
-  constructor(private router: Router) {}
-
-  // [property] is one-way binding from component to DOM,
-  // while [(ngModel)] is two-way binding between component and DOM.
+  constructor(
+    private router: Router,
+    private courseService: CourseService
+  ) {}
 
   ngOnInit(): void {
-    // Simulating course data loading
-    this.availableCourses = 12;
+    this.availableCourses = this.courseService.getCourses().length;
 
     console.log('HomeComponent initialised — courses loaded');
   }

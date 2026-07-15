@@ -1,0 +1,31 @@
+import { Component, OnInit } from '@angular/core';
+import { CourseService } from '../../services/course';
+
+@Component({
+  selector: 'app-course-summary-widget',
+  standalone: true,
+  imports: [],
+  templateUrl: './course-summary-widget.html',
+  styleUrl: './course-summary-widget.css'
+})
+export class CourseSummaryWidget implements OnInit {
+  courseCount = 0;
+
+  constructor(private courseService: CourseService) {}
+
+  ngOnInit(): void {
+    this.courseCount = this.courseService.getCourses().length;
+  }
+
+  addSampleCourse(): void {
+    this.courseService.addCourse({
+      id: 6,
+      name: 'Software Engineering',
+      code: 'SE106',
+      credits: 3,
+      gradeStatus: 'pending'
+    });
+
+    this.courseCount = this.courseService.getCourses().length;
+  }
+}

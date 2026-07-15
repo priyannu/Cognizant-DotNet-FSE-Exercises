@@ -1,0 +1,11 @@
+<h3>Component-Level Notification Service</h3>
+
+<button type="button" (click)="addNotification()">
+  Add Notification
+</button>
+
+<ul>
+  <li *ngFor="let message of notificationService.getAll()">
+    {{ message }}
+  </li>
+</ul>

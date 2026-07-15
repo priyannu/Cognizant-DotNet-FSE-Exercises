@@ -5,10 +5,10 @@
 <ng-container *ngIf="!isLoading">
   <ng-container *ngIf="courses.length > 0; else noCourses">
     <app-course-card
-  *ngFor="let course of courses; trackBy: trackByCourseId"
-  [course]="course"
-  (enrollRequested)="onEnroll($event)">
-</app-course-card>
+      *ngFor="let course of courses; trackBy: trackByCourseId"
+      [course]="course"
+      (enrollRequested)="onEnroll($event)">
+    </app-course-card>
   </ng-container>
 
   <ng-template #noCourses>
@@ -16,6 +16,6 @@
   </ng-template>
 </ng-container>
 
-<p *ngIf="selectedCourseId">
+<p *ngIf="selectedCourseId !== null">
   Selected course ID: {{ selectedCourseId }}
 </p>

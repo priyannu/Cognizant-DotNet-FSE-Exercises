@@ -52,18 +52,18 @@
       This course is part of the Student Course Portal curriculum.
     </p>
 
-    <p>
-      Enrollment status:
-      {{ course.enrolled ? 'Enrolled' : 'Not enrolled' }}
-    </p>
+   <p>
+  Enrollment status:
+  {{ isEnrolled() ? 'Enrolled' : 'Not enrolled' }}
+</p>
 
   </div>
 
   <br>
 
-  <button (click)="requestEnrollment()">
-    Enroll
-  </button>
+<button (click)="toggleEnrollment()">
+  {{ isEnrolled() ? 'Unenroll' : 'Enroll' }}
+</button>
 
   <button (click)="toggleExpanded()">
     {{ isExpanded ? 'Hide Details' : 'Show Details' }}
