@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 import { Course } from '../../models/course.model';
 import { EnrollmentService } from '../../services/enrollment';
@@ -11,10 +11,25 @@ import { EnrollmentService } from '../../services/enrollment';
   templateUrl: './student-profile.html',
   styleUrl: './student-profile.css'
 })
-export class StudentProfile {
+export class StudentProfile implements OnInit {
+  enrolledCourses: Course[] = [];
+  isLoading = true;
+  errorMessage = '';
+
   constructor(private enrollmentService: EnrollmentService) {}
 
-  get enrolledCourses(): Course[] {
-    return this.enrollmentService.getEnrolledCourses();
+  ngOnInit(): void {
+    this.enrollmentService.getEnrolledCourses().subscribe({
+      next: courses => {
+        this.enrolledCourses = courses;
+      },
+      error: error => {
+        this.errorMessage = error.message;
+        this.isLoading = false;
+      },
+      complete: () => {
+        this.isLoading = false;
+      }
+    });
   }
 }

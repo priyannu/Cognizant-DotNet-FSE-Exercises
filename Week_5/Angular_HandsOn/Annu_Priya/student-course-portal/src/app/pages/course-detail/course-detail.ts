@@ -14,6 +14,8 @@ import { CourseService } from '../../services/course';
 })
 export class CourseDetail implements OnInit {
   course: Course | undefined;
+  errorMessage = '';
+  isLoading = true;
 
   constructor(
     private route: ActivatedRoute,
@@ -23,6 +25,17 @@ export class CourseDetail implements OnInit {
   ngOnInit(): void {
     const id = Number(this.route.snapshot.paramMap.get('id'));
 
-    this.course = this.courseService.getCourseById(id);
+    this.courseService.getCourseById(id).subscribe({
+      next: course => {
+        this.course = course;
+      },
+      error: error => {
+        this.errorMessage = error.message;
+        this.isLoading = false;
+      },
+      complete: () => {
+        this.isLoading = false;
+      }
+    });
   }
 }

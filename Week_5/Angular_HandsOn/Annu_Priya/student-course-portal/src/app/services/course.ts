@@ -1,57 +1,69 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import {
+  catchError,
+  map,
+  Observable,
+  retry,
+  tap,
+  throwError
+} from 'rxjs';
+
 import { Course } from '../models/course.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CourseService {
-  private courses: Course[] = [
-    {
-      id: 1,
-      name: 'Angular Fundamentals',
-      code: 'ANG101',
-      credits: 4,
-      gradeStatus: 'passed'
-    },
-    {
-      id: 2,
-      name: 'TypeScript Essentials',
-      code: 'TS102',
-      credits: 3,
-      gradeStatus: 'pending'
-    },
-    {
-      id: 3,
-      name: 'Web Development',
-      code: 'WEB103',
-      credits: 4,
-      gradeStatus: 'failed'
-    },
-    {
-      id: 4,
-      name: 'Database Systems',
-      code: 'DB104',
-      credits: 3,
-      gradeStatus: 'passed'
-    },
-    {
-      id: 5,
-      name: 'Cloud Computing',
-      code: 'CC105',
-      credits: 4,
-      gradeStatus: 'pending'
-    }
-  ];
+  private readonly apiUrl = 'http://localhost:3000/courses';
 
-  getCourses(): Course[] {
-    return this.courses;
+  constructor(private http: HttpClient) {}
+
+  getCourses(): Observable<Course[]> {
+    return this.http.get<Course[]>(this.apiUrl).pipe(
+      map(courses => courses.filter(course => (course.credits ?? 0) > 0)),
+      tap(courses =>
+        console.log('Courses loaded:', courses.length)
+      ),
+      retry(2),
+      catchError(error => {
+        console.error('Course loading error:', error);
+
+        return throwError(
+          () => new Error('Failed to load courses. Please try again.')
+        );
+      })
+    );
   }
 
-  getCourseById(id: number): Course | undefined {
-    return this.courses.find(course => course.id === id);
+  getCourseById(id: number): Observable<Course> {
+    return this.http.get<Course>(`${this.apiUrl}/${id}`).pipe(
+      retry(2),
+      catchError(error => {
+        console.error('Course loading error:', error);
+
+        return throwError(
+          () => new Error('Failed to load course details.')
+        );
+      })
+    );
   }
 
-  addCourse(course: Course): void {
-    this.courses.push(course);
+  createCourse(course: Omit<Course, 'id'>): Observable<Course> {
+    return this.http.post<Course>(this.apiUrl, course);
+  }
+
+  updateCourse(
+    id: number,
+    course: Partial<Course>
+  ): Observable<Course> {
+    return this.http.put<Course>(
+      `${this.apiUrl}/${id}`,
+      course
+    );
+  }
+
+  deleteCourse(id: number): Observable<void> {
+    return this.http.delete<void>(`${this.apiUrl}/${id}`);
   }
 }

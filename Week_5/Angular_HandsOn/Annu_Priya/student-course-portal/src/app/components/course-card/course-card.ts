@@ -27,6 +27,7 @@ export class CourseCard implements OnChanges {
   @Output() enrollRequested = new EventEmitter<number>();
 
   isExpanded = false;
+  enrollmentError = '';
 
   constructor(
     private enrollmentService: EnrollmentService,
@@ -48,13 +49,27 @@ export class CourseCard implements OnChanges {
   }
 
   toggleEnrollment(): void {
-    if (this.enrollmentService.isEnrolled(this.course.id)) {
-      this.enrollmentService.unenroll(this.course.id);
-    } else {
-      this.enrollmentService.enroll(this.course.id);
-    }
+    this.enrollmentError = '';
 
-    this.enrollRequested.emit(this.course.id);
+    if (this.enrollmentService.isEnrolled(this.course.id)) {
+      this.enrollmentService.unenroll(this.course.id).subscribe({
+        next: () => {
+          this.enrollRequested.emit(this.course.id);
+        },
+        error: () => {
+          this.enrollmentError = 'Failed to unenroll from this course.';
+        }
+      });
+    } else {
+      this.enrollmentService.enroll(this.course.id).subscribe({
+        next: () => {
+          this.enrollRequested.emit(this.course.id);
+        },
+        error: () => {
+          this.enrollmentError = 'Failed to enroll in this course.';
+        }
+      });
+    }
   }
 
   isEnrolled(): boolean {

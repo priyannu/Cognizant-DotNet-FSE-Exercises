@@ -1,0 +1,39 @@
+.global-loading {
+  position: fixed;
+  top: 15px;
+  right: 20px;
+  z-index: 9999;
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  padding: 10px 16px;
+  border: 1px solid #888;
+  border-radius: 6px;
+
+  background-color: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.global-loading p {
+  margin: 0;
+  font-weight: bold;
+}
+
+.loading-spinner {
+  width: 20px;
+  height: 20px;
+
+  border: 3px solid #ddd;
+  border-top-color: #333;
+  border-radius: 50%;
+
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

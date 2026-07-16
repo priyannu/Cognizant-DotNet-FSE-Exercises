@@ -3,9 +3,9 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 
-import { CourseService } from '../../services/course';
 import { CourseSummaryWidget } from '../../components/course-summary-widget/course-summary-widget';
 import { Notification } from '../../components/notification/notification';
+import { CourseService } from '../../services/course';
 
 @Component({
   selector: 'app-home',
@@ -21,13 +21,13 @@ import { Notification } from '../../components/notification/notification';
   styleUrl: './home.css'
 })
 export class Home implements OnInit, OnDestroy {
-
   portalName = 'Student Course Portal';
   isPortalActive = true;
 
   message = '';
   searchTerm = '';
   availableCourses = 0;
+  errorMessage = '';
 
   constructor(
     private router: Router,
@@ -36,11 +36,17 @@ export class Home implements OnInit, OnDestroy {
   ) {}
 
   ngOnInit(): void {
-
-    this.availableCourses = this.courseService.getCourses().length;
-
     this.searchTerm =
       this.route.snapshot.queryParamMap.get('search') || '';
+
+    this.courseService.getCourses().subscribe({
+      next: courses => {
+        this.availableCourses = courses.length;
+      },
+      error: error => {
+        this.errorMessage = error.message;
+      }
+    });
 
     console.log('Home Component Loaded');
   }
@@ -54,13 +60,13 @@ export class Home implements OnInit, OnDestroy {
     this.router.navigate(['/enroll']);
   }
 
-onSearch(): void {
-  this.router.navigate([], {
-    relativeTo: this.route,
-    queryParams: {
-      search: this.searchTerm
-    },
-    queryParamsHandling: 'merge'
-  });
-}  
+  onSearch(): void {
+    this.router.navigate([], {
+      relativeTo: this.route,
+      queryParams: {
+        search: this.searchTerm
+      },
+      queryParamsHandling: 'merge'
+    });
+  }
 }

@@ -5,3 +5,15 @@
 <button type="button" (click)="addSampleCourse()">
   Add Sample Course
 </button>
+
+<button type="button" (click)="updateFirstCourse()">
+  Update First Course
+</button>
+
+<button type="button" (click)="deleteLastCourse()">
+  Delete Last Course
+</button>
+
+<p *ngIf="message">
+  {{ message }}
+</p>
