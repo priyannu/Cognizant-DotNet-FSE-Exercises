@@ -8,16 +8,30 @@ import {
   SimpleChanges
 } from '@angular/core';
 import { Router } from '@angular/router';
+import { Store } from '@ngrx/store';
+import { Observable } from 'rxjs';
 
 import { Course } from '../../models/course.model';
 import { Highlight } from '../../directives/highlight';
 import { CreditLabelPipe } from '../../pipes/credit-label-pipe';
-import { EnrollmentService } from '../../services/enrollment';
+
+import {
+  enrollInCourse,
+  unenrollFromCourse
+} from '../../store/enrollment/enrollment.actions';
+
+import {
+  selectEnrolledIds
+} from '../../store/enrollment/enrollment.selectors';
 
 @Component({
   selector: 'app-course-card',
   standalone: true,
-  imports: [CommonModule, Highlight, CreditLabelPipe],
+  imports: [
+    CommonModule,
+    Highlight,
+    CreditLabelPipe
+  ],
   templateUrl: './course-card.html',
   styleUrl: './course-card.css'
 })
@@ -26,13 +40,16 @@ export class CourseCard implements OnChanges {
 
   @Output() enrollRequested = new EventEmitter<number>();
 
+  readonly enrolledIds$: Observable<number[]>;
+
   isExpanded = false;
-  enrollmentError = '';
 
   constructor(
-    private enrollmentService: EnrollmentService,
-    private router: Router
-  ) {}
+    private readonly store: Store,
+    private readonly router: Router
+  ) {
+    this.enrolledIds$ = this.store.select(selectEnrolledIds);
+  }
 
   ngOnChanges(changes: SimpleChanges): void {
     if (changes['course']) {
@@ -48,32 +65,23 @@ export class CourseCard implements OnChanges {
     }
   }
 
-  toggleEnrollment(): void {
-    this.enrollmentError = '';
+  toggleEnrollment(enrolledIds: number[] | null): void {
+    const courseId = Number(this.course.id);
 
-    if (this.enrollmentService.isEnrolled(this.course.id)) {
-      this.enrollmentService.unenroll(this.course.id).subscribe({
-        next: () => {
-          this.enrollRequested.emit(this.course.id);
-        },
-        error: () => {
-          this.enrollmentError = 'Failed to unenroll from this course.';
-        }
-      });
+    const isCurrentlyEnrolled =
+      enrolledIds?.includes(courseId) ?? false;
+
+    if (isCurrentlyEnrolled) {
+      this.store.dispatch(
+        unenrollFromCourse({ courseId })
+      );
     } else {
-      this.enrollmentService.enroll(this.course.id).subscribe({
-        next: () => {
-          this.enrollRequested.emit(this.course.id);
-        },
-        error: () => {
-          this.enrollmentError = 'Failed to enroll in this course.';
-        }
-      });
+      this.store.dispatch(
+        enrollInCourse({ courseId })
+      );
     }
-  }
 
-  isEnrolled(): boolean {
-    return this.enrollmentService.isEnrolled(this.course.id);
+    this.enrollRequested.emit(courseId);
   }
 
   toggleExpanded(): void {
@@ -81,12 +89,14 @@ export class CourseCard implements OnChanges {
   }
 
   goToDetails(): void {
-    this.router.navigate(['/courses', this.course.id]);
+    this.router.navigate([
+      '/courses',
+      this.course.id
+    ]);
   }
 
   get cardClasses(): Record<string, boolean> {
     return {
-      'card--enrolled': this.isEnrolled(),
       'card--full': (this.course.credits ?? 0) >= 4,
       expanded: this.isExpanded
     };

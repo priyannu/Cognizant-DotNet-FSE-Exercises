@@ -45,32 +45,38 @@
     </span>
   </div>
 
-  <div
-    *ngIf="isExpanded"
-    class="course-details"
-  >
-    <p>
-      This course is part of the Student Course Portal curriculum.
-    </p>
+  <ng-container *ngIf="enrolledIds$ | async as enrolledIds">
+    <div
+      *ngIf="isExpanded"
+      class="course-details"
+    >
+      <p>
+        This course is part of the Student Course Portal curriculum.
+      </p>
 
-    <p>
-      Enrollment status:
-      {{ isEnrolled() ? 'Enrolled' : 'Not enrolled' }}
-    </p>
-  </div>
+      <p>
+        Enrollment status:
+        {{
+          enrolledIds.includes(+course.id)
+            ? 'Enrolled'
+            : 'Not enrolled'
+        }}
+      </p>
+    </div>
 
-  <p *ngIf="enrollmentError">
-    {{ enrollmentError }}
-  </p>
+    <br />
 
-  <br />
-
-  <button
-    type="button"
-    (click)="toggleEnrollment()"
-  >
-    {{ isEnrolled() ? 'Unenroll' : 'Enroll' }}
-  </button>
+    <button
+      type="button"
+      (click)="toggleEnrollment(enrolledIds)"
+    >
+      {{
+        enrolledIds.includes(+course.id)
+          ? 'Unenroll'
+          : 'Enroll'
+      }}
+    </button>
+  </ng-container>
 
   <button
     type="button"

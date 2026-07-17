@@ -1,7 +1,7 @@
 {
   "courses": [
     {
-      "id": "1",
+      "id": 1,
       "name": "Advanced Angular Fundamentals",
       "code": "ANG101",
       "credits": 4,
@@ -9,7 +9,7 @@
       "enrolled": false
     },
     {
-      "id": "2",
+      "id": 2,
       "name": "TypeScript Essentials",
       "code": "TS102",
       "credits": 3,
@@ -17,7 +17,7 @@
       "enrolled": false
     },
     {
-      "id": "3",
+      "id": 3,
       "name": "Web Development",
       "code": "WEB103",
       "credits": 4,
@@ -25,7 +25,7 @@
       "enrolled": false
     },
     {
-      "id": "4",
+      "id": 4,
       "name": "Database Systems",
       "code": "DB104",
       "credits": 3,
@@ -35,31 +35,21 @@
   ],
   "students": [
     {
-      "id": "1",
+      "id": 1,
       "name": "Annu Priya",
       "email": "annu@example.com"
     }
   ],
   "enrollments": [
     {
-      "id": "1",
+      "id": 1,
       "studentId": 1,
       "courseId": 1
     },
     {
+      "id": 2,
       "studentId": 1,
-      "courseId": "1",
-      "id": "YexkIGQaOzo"
-    },
-    {
-      "studentId": 1,
-      "courseId": "2",
-      "id": "7t5G8GKY8EQ"
-    },
-    {
-      "studentId": 1,
-      "courseId": "1",
-      "id": "zul5rJWrqeI"
+      "courseId": 2
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

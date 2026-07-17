@@ -1,75 +1,54 @@
 <h2>Available Courses</h2>
 
-<ng-container *ngIf="courseState$ | async as state">
-  <p *ngIf="state.isLoading">
-    Loading courses...
-  </p>
+<p *ngIf="loading$ | async">
+  Loading courses...
+</p>
 
-  <p *ngIf="state.errorMessage">
-    {{ state.errorMessage }}
-  </p>
+<p *ngIf="error$ | async as error">
+  {{ error }}
+</p>
 
-  <ng-container
-    *ngIf="
-      !state.isLoading &&
-      !state.errorMessage &&
-      state.courses.length > 0;
-      else noCourses
-    "
-  >
-    <div
-      *ngFor="
-        let course of state.courses;
-        trackBy: trackByCourseId
-      "
-    >
-      <app-course-card
-        [course]="course"
-        (enrollRequested)="onEnroll($event)"
-      >
-      </app-course-card>
+<div
+  *ngFor="let course of (courses$ | async); trackBy: trackByCourseId"
+>
 
-      <button
-        type="button"
-        (click)="loadStudents(course)"
-      >
-        Load Enrolled Students
-      </button>
+  <app-course-card
+    [course]="course"
+    (enrollRequested)="onEnroll($event)">
+  </app-course-card>
 
-      <section *ngIf="selectedCourseId === course.id">
-        <h3>
-          Enrolled Students — {{ selectedCourseName }}
-        </h3>
+  <button
+    type="button"
+    (click)="loadStudents(course)">
+    Load Enrolled Students
+  </button>
 
-        <p *ngIf="studentMessage">
-          {{ studentMessage }}
-        </p>
+  <section *ngIf="selectedCourseId === course.id">
 
-        <ul *ngIf="enrolledStudents.length > 0">
-          <li *ngFor="let student of enrolledStudents">
-            {{ student.name }}
+    <h3>
+      Enrolled Students — {{ selectedCourseName }}
+    </h3>
 
-            <span *ngIf="student.email">
-              — {{ student.email }}
-            </span>
-          </li>
-        </ul>
-      </section>
-
-      <br />
-      <br />
-    </div>
-  </ng-container>
-
-  <ng-template #noCourses>
-    <p
-      *ngIf="
-        !state.isLoading &&
-        !state.errorMessage &&
-        state.courses.length === 0
-      "
-    >
-      No courses available.
+    <p *ngIf="studentMessage">
+      {{ studentMessage }}
     </p>
-  </ng-template>
-</ng-container>
+
+    <ul *ngIf="enrolledStudents.length > 0">
+
+      <li *ngFor="let student of enrolledStudents">
+
+        {{ student.name }}
+
+        <span *ngIf="student.email">
+          — {{ student.email }}
+        </span>
+
+      </li>
+
+    </ul>
+
+  </section>
+
+  <br><br>
+
+</div>

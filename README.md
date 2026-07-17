@@ -617,6 +617,192 @@ Implemented JWT-based authentication and authorization for an ASP.NET Core Web A
 - Verified Unauthorized (401) responses for protected APIs
 - Tested APIs using Swagger UI
 
+
+
+# Week 5 – Angular
+
+Implemented a Student Course Portal using Angular 21, demonstrating component-based architecture, routing, directives, pipes, services, reactive programming with RxJS, HTTP communication, NgRx state management, and unit testing.
+
+---
+
+## Hands-On 1 – Angular Environment Setup
+
+### Concepts Used
+
+- Angular CLI
+- Standalone Components
+- Angular Project Structure
+- Build & Serve
+
+### Features
+
+- Created Angular project
+- Configured Angular CLI
+- Built and served the application
+- Verified project setup
+
+---
+
+## Hands-On 2 – Components and Data Binding
+
+### Concepts Used
+
+- Standalone Components
+- @Input()
+- @Output()
+- EventEmitter
+- ngOnChanges
+
+### Features
+
+- Created reusable CourseCard component
+- Implemented parent-child communication
+- Rendered dynamic course data
+- Triggered enrollment events
+
+---
+
+## Hands-On 3 – Directives and Pipes
+
+### Concepts Used
+
+- Structural Directives
+- Attribute Directives
+- Custom Pipes
+
+### Features
+
+- Implemented custom Highlight Directive
+- Created Credit Label Pipe
+- Applied conditional rendering
+- Improved UI readability
+
+---
+
+## Hands-On 4 – Routing
+
+### Concepts Used
+
+- Angular Router
+- Route Configuration
+- Navigation
+
+### Features
+
+- Configured application routing
+- Navigated between pages
+- Protected routes
+
+---
+
+## Hands-On 5 – Forms
+
+### Concepts Used
+
+- Template Driven Forms
+- Reactive Forms
+- Form Validation
+
+### Features
+
+- Created course forms
+- Applied validations
+- Displayed validation messages
+
+---
+
+## Hands-On 6 – Services and Dependency Injection
+
+### Concepts Used
+
+- Angular Services
+- Dependency Injection
+- Singleton Services
+
+### Features
+
+- Implemented CourseService
+- Shared data across components
+- Consumed services
+
+---
+
+## Hands-On 7 – RxJS
+
+### Concepts Used
+
+- Observable
+- Subject
+- switchMap()
+- catchError()
+- tap()
+
+### Features
+
+- Loaded enrolled students
+- Handled asynchronous streams
+- Implemented reactive data flow
+- Error handling using RxJS operators
+
+---
+
+## Hands-On 8 – HTTP Client
+
+### Concepts Used
+
+- HttpClient
+- REST API
+- JSON Server
+- CRUD Operations
+
+### Features
+
+- Retrieved courses
+- Added CRUD support
+- Consumed REST endpoints
+- Error handling with retry()
+
+---
+
+## Hands-On 9 – NgRx State Management
+
+### Concepts Used
+
+- NgRx Store
+- Actions
+- Reducers
+- Selectors
+- Effects
+- Redux DevTools
+
+### Features
+
+- Configured NgRx Store
+- Loaded courses through Effects
+- Managed enrollment state
+- Integrated Redux DevTools
+- Implemented state selectors
+
+---
+
+## Hands-On 10 – Angular Testing
+
+### Concepts Used
+
+- Unit Testing
+- HttpTestingController
+- MockStore
+- Component Testing
+- Vitest
+
+### Features
+
+- Tested CourseCard component
+- Generated code coverage report
+- Tested CourseService using HttpTestingController
+- Tested NgRx components using MockStore
+- Verified loading state
+
 ---
 
 
@@ -719,6 +905,20 @@ Cognizant_DN5.0
 ├── Week_4
 │   └── Microservices
 │       └── Exercise1_JWT_Authentication
+│
+├── Week_5
+│   └── Angular_HandsOn
+│       ├── student-course-portal
+│       ├── HandsOn_1
+│       ├── HandsOn_2
+│       ├── HandsOn_3
+│       ├── HandsOn_4
+│       ├── HandsOn_5
+│       ├── HandsOn_6
+│       ├── HandsOn_7
+│       ├── HandsOn_8
+│       ├── HandsOn_9
+│       └── HandsOn_10
 │
 ├── README.md
 └── .gitignore

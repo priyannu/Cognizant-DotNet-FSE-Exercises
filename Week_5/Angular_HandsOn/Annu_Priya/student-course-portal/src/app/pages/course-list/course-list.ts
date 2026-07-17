@@ -1,29 +1,22 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import {
-  catchError,
-  map,
-  Observable,
-  of,
-  startWith,
-  Subject,
-  switchMap,
-  tap
-} from 'rxjs';
+import { Store } from '@ngrx/store';
+import { Observable, Subject, of } from 'rxjs';
+import { catchError, switchMap, tap } from 'rxjs/operators';
 
 import { CourseCard } from '../../components/course-card/course-card';
 import { Course } from '../../models/course.model';
-import { CourseService } from '../../services/course';
 import {
   EnrollmentService,
   Student
 } from '../../services/enrollment';
 
-interface CourseListState {
-  courses: Course[];
-  isLoading: boolean;
-  errorMessage: string;
-}
+import { loadCourses } from '../../store/course/course.actions';
+import {
+  selectAllCourses,
+  selectCoursesError,
+  selectCoursesLoading
+} from '../../store/course/course.selectors';
 
 @Component({
   selector: 'app-course-list',
@@ -33,106 +26,65 @@ interface CourseListState {
   styleUrl: './course-list.css'
 })
 export class CourseList {
+
+  courses$: Observable<Course[]>;
+  loading$: Observable<boolean>;
+  error$: Observable<string | null>;
+
   selectedCourseId: number | null = null;
   selectedCourseName = '';
 
   enrolledStudents: Student[] = [];
   studentMessage = '';
 
-  courseState$: Observable<CourseListState>;
-
   private selectedCourseSubject = new Subject<Course>();
 
   constructor(
-    private courseService: CourseService,
+    private store: Store,
     private enrollmentService: EnrollmentService
   ) {
-    this.courseState$ = this.courseService.getCourses().pipe(
-      map(courses => ({
-        courses,
-        isLoading: false,
-        errorMessage: ''
-      })),
-      startWith({
-        courses: [],
-        isLoading: true,
-        errorMessage: ''
+
+    this.courses$ = this.store.select(selectAllCourses);
+    this.loading$ = this.store.select(selectCoursesLoading);
+    this.error$ = this.store.select(selectCoursesError);
+
+    this.store.dispatch(loadCourses());
+
+    this.selectedCourseSubject.pipe(
+      tap(course => {
+        this.selectedCourseId = course.id;
+        this.selectedCourseName = course.name;
+        this.enrolledStudents = [];
+        this.studentMessage = 'Loading enrolled students...';
       }),
-      catchError(error =>
-        of({
-          courses: [],
-          isLoading: false,
-          errorMessage:
-            error.message || 'Failed to load courses.'
-        })
-      )
-    );
 
-    /*
-     * switchMap cancels the previous student request when another
-     * course is selected before the earlier request completes.
-     */
-    this.selectedCourseSubject
-      .pipe(
-        tap(course => {
-          this.selectedCourseId = course.id;
-          this.selectedCourseName = course.name;
-          this.enrolledStudents = [];
-          this.studentMessage = 'Loading enrolled students...';
-
-          console.log(
-            'Course selected for switchMap:',
-            course.id
-          );
-        }),
-
-        switchMap(course =>
-          this.enrollmentService
-            .getStudentsByCourse(course.id)
-            .pipe(
-              catchError(error => {
-                console.error(
-                  'Student loading error:',
-                  error
-                );
-
-                this.studentMessage =
-                  'Failed to load enrolled students.';
-
-                return of([]);
-              })
-            )
+      switchMap(course =>
+        this.enrollmentService.getStudentsByCourse(course.id).pipe(
+          catchError(() => {
+            this.studentMessage =
+              'Failed to load enrolled students.';
+            return of([]);
+          })
         )
       )
-      .subscribe(students => {
-        this.enrolledStudents = students;
 
-        this.studentMessage =
-          students.length > 0
-            ? ''
-            : 'No students enrolled in this course.';
+    ).subscribe(students => {
 
-        console.log(
-          'Students loaded using switchMap:',
-          students
-        );
-      });
+      this.enrolledStudents = students;
+
+      this.studentMessage =
+        students.length === 0
+          ? 'No students enrolled in this course.'
+          : '';
+    });
   }
 
-  trackByCourseId(
-    index: number,
-    course: Course
-  ): number {
+  trackByCourseId(index: number, course: Course): number {
     return course.id;
   }
 
   onEnroll(courseId: number): void {
-    this.selectedCourseId = courseId;
-
-    console.log(
-      'Enrollment action for course:',
-      courseId
-    );
+    console.log('Enroll', courseId);
   }
 
   loadStudents(course: Course): void {
