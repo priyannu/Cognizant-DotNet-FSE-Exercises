@@ -804,7 +804,117 @@ Implemented a Student Course Portal using Angular 21, demonstrating component-ba
 - Verified loading state
 
 ---
+# Week 6 and 7 – Git
 
+Implemented Git and GitHub workflows as part of the Cognizant Digital Nurture 5.0 program, covering repository creation, version control, branching strategies, merge conflict resolution, remote repository operations, and Git best practices.
+
+---
+
+## Hands-On 1 – Git Basics
+
+### Concepts Used
+
+- Git Installation
+- Git Configuration
+- Repository Initialization
+- git init
+- git status
+- git add
+- git commit
+- git log
+- git remote
+- git push
+
+### Features
+
+- Configured Git username and email
+- Initialized a local Git repository
+- Created and tracked project files
+- Performed the initial commit
+- Connected the local repository with GitHub
+- Successfully pushed the repository to GitHub
+
+---
+
+## Hands-On 2 – Git Ignore
+
+### Concepts Used
+
+- .gitignore
+- Ignoring Files
+- Ignoring Directories
+
+### Features
+
+- Created a `.gitignore` file
+- Ignored log files using wildcard patterns
+- Ignored log directories
+- Verified ignored files were not tracked by Git
+
+---
+
+## Hands-On 3 – Branching and Merging
+
+### Concepts Used
+
+- Branching
+- git branch
+- git switch
+- git diff
+- git merge
+- Branch Management
+
+### Features
+
+- Created a new branch
+- Switched between branches
+- Added branch-specific changes
+- Compared branches using `git diff`
+- Merged changes into the master branch
+- Deleted merged branches
+
+---
+
+## Hands-On 4 – Merge Conflict Resolution
+
+### Concepts Used
+
+- Merge Conflicts
+- Conflict Resolution
+- Three-Way Merge
+- Git History
+- .gitignore
+
+### Features
+
+- Created conflicting changes in multiple branches
+- Triggered a merge conflict
+- Resolved merge conflicts manually
+- Committed the resolved version
+- Updated `.gitignore` to ignore backup files
+- Deleted merged branches
+- Verified clean repository status
+
+---
+
+## Hands-On 5 – Remote Repository Operations
+
+### Concepts Used
+
+- git pull
+- git push
+- Remote Repository
+- Repository Synchronization
+
+### Features
+
+- Pulled the latest changes from GitHub
+- Verified local and remote repository synchronization
+- Pushed all local commits successfully
+- Confirmed a clean working tree
+- Verified repository status on GitHub
+
+---
 
 ## Tools and Technologies
 
@@ -812,10 +922,15 @@ Implemented a Student Course Portal using Angular 21, demonstrating component-ba
 - C#
 - Java
 - SQL
+- TypeScript
+- JavaScript
+- HTML
+- CSS
 
 ### Frameworks & Libraries
 - ASP.NET Core Web API
 - Entity Framework Core
+- Angular
 - JWT Authentication
 - NUnit
 - Moq
@@ -826,7 +941,6 @@ Implemented a Student Course Portal using Angular 21, demonstrating component-ba
 - SQL Server LocalDB
 
 ### Development Tools
-
 - Visual Studio 2026
 - Visual Studio Code
 - IntelliJ IDEA
@@ -837,6 +951,7 @@ Implemented a Student Course Portal using Angular 21, demonstrating component-ba
 ### Version Control
 - Git
 - GitHub
+- Git Bash
 
 ## Repository Structure
 
@@ -919,6 +1034,14 @@ Cognizant_DN5.0
 │       ├── HandsOn_8
 │       ├── HandsOn_9
 │       └── HandsOn_10
+│
+├── Week_6_and_7
+│   └── GIT
+│       ├── 1_Git Basics
+│       ├── 2_Git Ignore
+│       ├── 3_Branching and Merging
+│       ├── 4_Merge Conflict Resolution
+│       └── 5_Remote Repository Operations
 │
 ├── README.md
 └── .gitignore
