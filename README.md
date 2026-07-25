@@ -2,6 +2,128 @@
 
 This repository contains the exercises completed as part of the **Cognizant Digital Nurture 5.0 DotNet FSE Program**.
 
+
+## Table of Contents
+
+- Repository Structure
+- Engineering Concepts
+- Advanced SQL Server
+- NUnit and Moq
+- Entity Framework Core
+- ASP.NET Core Web API
+- Microservices
+- Week 5 – Angular
+- Week 5 – React
+- Week 6 & 7 – Git
+- Tools and Technologies
+
+---
+## Repository Structure
+
+```text
+Cognizant_DN5.0
+│
+├── Week_1
+│   ├── Engineering Concepts
+│   │   ├── Design Patterns
+│   │   │   ├── Exercise1_SingletonPattern
+│   │   │   └── Exercise2_FactoryMethodPattern
+│   │   │
+│   │   ├── DSA-Java
+│   │   │   ├── Exercise2_ECommerceSearch
+│   │   │   └── Exercise7_FinancialForecasting
+│   │   │
+│   │   └── DSA-CSharp
+│   │       ├── Exercise2_ECommerceSearch
+│   │       └── Exercise7_FinancialForecasting
+│   │
+│   ├── Advanced SQL Server
+│   │   ├── Advanced Concepts
+│   │   │   └── Exercise1_Ranking_Window_Functions
+│   │   │
+│   │   └── Stored Procedures
+│   │       ├── Exercise1_Create_Stored_Procedure
+│   │       └── Exercise5_Return_Data_From_Stored_Procedure
+│   │
+│   └── NUnit and Moq
+│       ├── NUnit
+│       │   ├── Exercise1_TestFixture_Test
+│       │   ├── Exercise2_LeapYearCalculator
+│       │   ├── Exercise3_StringConverter
+│       │   ├── Exercise4_FourSeasons
+│       │   ├── Exercise5_UserManager
+│       │   ├── Exercise6_AccountsManager
+│       │   ├── Exercise7_Collections
+│       │   ├── Exercise8_UtilityLibrary
+│       │   └── Exercise9_Converter
+│       │
+│       └── Moq
+│           └── Exercise1_CustomerComm_Moq
+│
+├── Week_2
+│   └── Entity Framework Core
+│       ├── EF_Core_Labs
+│       │   └── RetailInventory
+│       ├── Lab1_Understanding_ORM
+│       ├── Lab2_Database_Context
+│       ├── Lab3_Migrations
+│       ├── Lab4_Insert_Data
+│       └── Lab5_Retrieve_Data
+│
+├── Week_3
+│   └── ASP.NET_Core_Web_API
+│       ├── WebApi_Project
+│       ├── Exercise1_Building_RESTful_Web_Services
+│       ├── Exercise2_Controllers_and_Actions
+│       ├── Exercise3_Working_with_Models
+│       ├── Exercise4_Validation_and_Error_Handling
+│       ├── Exercise5_Custom_Middleware
+│       └── Exercise6_Apache_Kafka
+│           ├── Hands_On1
+│           └── Hands_On2
+│
+├── Week_4
+│   └── Microservices
+│       └── Exercise1_JWT_Authentication
+│
+├── Week_5
+│   ├── Angular_HandsOn
+│   │   ├── student-course-portal
+│   │   ├── HandsOn_1
+│   │   ├── HandsOn_2
+│   │   ├── HandsOn_3
+│   │   ├── HandsOn_4
+│   │   ├── HandsOn_5
+│   │   ├── HandsOn_6
+│   │   ├── HandsOn_7
+│   │   ├── HandsOn_8
+│   │   ├── HandsOn_9
+│   │   └── HandsOn_10
+│   │
+│   └── React_HandsOn
+│       ├── 01_myfirstreact
+│       ├── 02_StudentApp
+│       ├── 03_scorecalculatorapp
+│       ├── 04_blogapp
+│       ├── 05_cohorttracker
+│       ├── 09_cricketapp
+│       ├── 10_officespacerentalapp
+│       ├── 11_eventexamplesapp
+│       ├── 12_ticketbookingapp
+│       └── 13_bloggerapp
+│
+├── Week_6_and_7
+│   └── GIT
+│       ├── 1_Git Basics
+│       ├── 2_Git Ignore
+│       ├── 3_Branching and Merging
+│       ├── 4_Merge Conflict Resolution
+│       └── 5_Remote Repository Operations
+│
+├── README.md
+└── .gitignore
+```
+
 ---
 
 # Engineering Concepts
@@ -803,6 +925,176 @@ Implemented a Student Course Portal using Angular 21, demonstrating component-ba
 - Tested NgRx components using MockStore
 - Verified loading state
 
+
+# Week 5 – React
+
+Implemented multiple React applications to understand React fundamentals, JSX, components, props, state, conditional rendering, event handling, styling, list rendering, and component composition.
+
+---
+## Hands-On 1 – My First React
+
+### Concepts Used
+
+- React
+- JSX
+- Functional Components
+- Create React App
+
+### Features
+
+- Created first React application
+- Understood React project structure
+- Rendered JSX elements
+- Successfully built and executed the application
+
+---
+
+## Hands-On 2 – Student App
+
+### Concepts Used
+
+- Functional Components
+- Component Composition
+- JSX
+
+### Features
+
+- Created Home, About, and Contact components
+- Rendered multiple components
+- Organized application structure
+
+---
+
+## Hands-On 3 – Score Calculator App
+
+### Concepts Used
+
+- Components
+- CSS Styling
+- Props
+
+### Features
+
+- Calculated student grades
+- Applied external CSS
+- Displayed formatted score details
+
+---
+
+## Hands-On 4 – Blog App
+
+### Concepts Used
+
+- React Components
+- Props
+- JSX
+
+### Features
+
+- Displayed blog information
+- Passed data using props
+- Reused components
+
+---
+
+## Hands-On 5 – Cohort Tracker
+
+### Concepts Used
+
+- CSS Modules
+- Inline Styling
+- Conditional Styling
+
+### Features
+
+- Styled React components
+- Applied CSS Modules
+- Displayed ongoing and completed cohorts with different colors
+
+---
+
+## Hands-On 9 – Cricket App
+
+### Concepts Used
+
+- Lists
+- Array Destructuring
+- Conditional Rendering
+
+### Features
+
+- Displayed player details
+- Filtered players based on score
+- Rendered odd and even team members
+
+---
+
+## Hands-On 10 – Office Space Rental App
+
+### Concepts Used
+
+- JSX
+- Conditional Rendering
+- Inline CSS
+
+### Features
+
+- Displayed office space details
+- Applied conditional color formatting
+- Rendered office images dynamically
+
+---
+
+## Hands-On 11 – Event Examples App
+
+### Concepts Used
+
+- Event Handling
+- Synthetic Events
+- State Management
+
+### Features
+
+- Implemented button click events
+- Currency converter
+- Displayed alert messages
+- Handled user interactions
+
+---
+
+## Hands-On 12 – Ticket Booking App
+
+### Concepts Used
+
+- Conditional Rendering
+- State
+- Login & Logout
+
+### Features
+
+- Implemented Guest and User pages
+- Added Login and Logout functionality
+- Rendered components conditionally
+
+---
+
+## Hands-On 13 – Blogger App
+
+### Concepts Used
+
+- List Rendering
+- map()
+- Keys
+- Multiple Components
+- Conditional Rendering
+
+### Features
+
+- Rendered Book Details
+- Rendered Blog Details
+- Rendered Course Details
+- Displayed multiple lists using map()
+
 ---
 # Week 6 and 7 – Git
 
@@ -928,9 +1220,12 @@ Implemented Git and GitHub workflows as part of the Cognizant Digital Nurture 5.
 - CSS
 
 ### Frameworks & Libraries
+
 - ASP.NET Core Web API
 - Entity Framework Core
 - Angular
+- React
+- React DOM
 - JWT Authentication
 - NUnit
 - Moq
@@ -941,9 +1236,12 @@ Implemented Git and GitHub workflows as part of the Cognizant Digital Nurture 5.
 - SQL Server LocalDB
 
 ### Development Tools
+
 - Visual Studio 2026
 - Visual Studio Code
 - IntelliJ IDEA
+- Node.js
+- npm
 - SQL Server Management Studio (SSMS)
 - Swagger UI
 - Postman
@@ -953,96 +1251,3 @@ Implemented Git and GitHub workflows as part of the Cognizant Digital Nurture 5.
 - GitHub
 - Git Bash
 
-## Repository Structure
-
-```text
-Cognizant_DN5.0
-│
-├── Week_1
-│   ├── Engineering Concepts
-│   │   ├── Design Patterns
-│   │   │   ├── Exercise1_SingletonPattern
-│   │   │   └── Exercise2_FactoryMethodPattern
-│   │   │
-│   │   ├── DSA-Java
-│   │   │   ├── Exercise2_ECommerceSearch
-│   │   │   └── Exercise7_FinancialForecasting
-│   │   │
-│   │   └── DSA-CSharp
-│   │       ├── Exercise2_ECommerceSearch
-│   │       └── Exercise7_FinancialForecasting
-│   │
-│   ├── Advanced SQL Server
-│   │   ├── Advanced Concepts
-│   │   │   └── Exercise1_Ranking_Window_Functions
-│   │   │
-│   │   └── Stored Procedures
-│   │       ├── Exercise1_Create_Stored_Procedure
-│   │       └── Exercise5_Return_Data_From_Stored_Procedure
-│   │
-│   └── NUnit and Moq
-│       ├── NUnit
-│       │   ├── Exercise1_TestFixture_Test
-│       │   ├── Exercise2_LeapYearCalculator
-│       │   ├── Exercise3_StringConverter
-│       │   ├── Exercise4_FourSeasons
-│       │   ├── Exercise5_UserManager
-│       │   ├── Exercise6_AccountsManager
-│       │   ├── Exercise7_Collections
-│       │   ├── Exercise8_UtilityLibrary
-│       │   └── Exercise9_Converter
-│       │
-│       └── Moq
-│           └── Exercise1_CustomerComm_Moq
-│
-├── Week_2
-│   └── Entity Framework Core
-│       ├── EF_Core_Labs
-│       │   └── RetailInventory
-│       ├── Lab1_Understanding_ORM
-│       ├── Lab2_Database_Context
-│       ├── Lab3_Migrations
-│       ├── Lab4_Insert_Data
-│       └── Lab5_Retrieve_Data
-│
-├── Week_3
-│   └── ASP.NET_Core_Web_API
-│       ├── WebApi_Project
-│       ├── Exercise1_Building_RESTful_Web_Services
-│       ├── Exercise2_Controllers_and_Actions
-│       ├── Exercise3_Working_with_Models
-│       ├── Exercise4_Validation_and_Error_Handling
-│       ├── Exercise5_Custom_Middleware
-│       └── Exercise6_Apache_Kafka
-│           ├── Hands_On1
-│           └── Hands_On2
-│
-├── Week_4
-│   └── Microservices
-│       └── Exercise1_JWT_Authentication
-│
-├── Week_5
-│   └── Angular_HandsOn
-│       ├── student-course-portal
-│       ├── HandsOn_1
-│       ├── HandsOn_2
-│       ├── HandsOn_3
-│       ├── HandsOn_4
-│       ├── HandsOn_5
-│       ├── HandsOn_6
-│       ├── HandsOn_7
-│       ├── HandsOn_8
-│       ├── HandsOn_9
-│       └── HandsOn_10
-│
-├── Week_6_and_7
-│   └── GIT
-│       ├── 1_Git Basics
-│       ├── 2_Git Ignore
-│       ├── 3_Branching and Merging
-│       ├── 4_Merge Conflict Resolution
-│       └── 5_Remote Repository Operations
-│
-├── README.md
-└── .gitignore
-```
